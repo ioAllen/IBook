@@ -1,0 +1,83 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    api 'org.greenrobot:eventbus:3.1.1'
+    api "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
+    api "com.android.support:design:$rootProject.ext.supportLibraryVersion"
+    api "com.android.support:recyclerview-v7:$rootProject.ext.supportLibraryVersion"
+    api "com.android.support:cardview-v7:$rootProject.ext.supportLibraryVersion"
+    api "com.android.support:support-annotations:$rootProject.ext.supportLibraryVersion"
+    api "com.android.support:exifinterface:$rootProject.ext.supportLibraryVersion"
+
+    //okhttp3
+    api "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.okhttp_version"
+    api "com.squareup.okhttp3:okhttp-urlconnection:$rootProject.ext.okhttp_version"
+    api "com.squareup.okhttp3:okhttp:$rootProject.ext.okhttp_version"
+
+    //retrofit2
+    api "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofit_version"
+    api "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofit_version"
+    api "com.squareup.retrofit2:adapter-rxjava2:$rootProject.ext.retrofit_version"
+
+    api 'com.facebook.stetho:stetho:1.5.0'
+    api 'com.facebook.stetho:stetho-okhttp3:1.5.0'
+
+    //material对话框
+    api 'com.afollestad.material-dialogs:core:0.9.6.0'
+
+    //gson
+    api 'com.google.code.gson:gson:2.8.2'
+
+    api 'io.reactivex:rxjava:1.3.0'
+    api 'io.reactivex:rxandroid:1.2.1'
+
+    //图片选择框架
+    api 'cn.finalteam.rxgalleryfinal:library:1.1.3'
+
+    //图片压缩
+    api 'id.zelory:compressor:2.1.0'
+
+    //sqlbrite 数据库（响应式）
+    api 'com.squareup.sqlbrite3:sqlbrite:3.2.0'
+    api 'android.arch.persistence:db:1.0.0'
+    api 'android.arch.persistence:db-framework:1.0.0'
+
+    //rxlifecycle2
+    api 'com.trello.rxlifecycle2:rxlifecycle:2.2.0'
+    api 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.0'
+
+    //BaseRecyclerAdapter
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.21'
+    //timber
+    api 'com.jakewharton.timber:timber:4.6.0'
+    //kotlin
+    api "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    //glide图片加载
+    api 'com.github.bumptech.glide:glide:3.7.0'
+}

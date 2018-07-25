@@ -1,0 +1,55 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.android.i_book"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ['autovaluegson.defaultCollectionsToEmpty': 'true', 'autovaluegson.mutableAdaptersWithDefaultSetters': 'true']
+                includeCompileClasspath true
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':lib_common')
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+
+    //auto-value
+    compileOnly "com.jakewharton.auto.value:auto-value-annotations:$rootProject.ext.auto_value_version"
+    compileOnly "com.ryanharter.auto.value:auto-value-gson:$rootProject.ext.auto_value_gson_version"
+    kapt "com.google.auto.value:auto-value:$rootProject.ext.auto_value_version"
+    kapt 'com.ryanharter.auto.value:auto-value-parcel:0.2.5'
+    kapt "com.ryanharter.auto.value:auto-value-gson:$rootProject.ext.auto_value_gson_version"
+
+    //dagger2
+    implementation "com.google.dagger:dagger:$rootProject.ext.dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$rootProject.ext.dagger_version"
+}
