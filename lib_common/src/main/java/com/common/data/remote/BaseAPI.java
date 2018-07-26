@@ -1,6 +1,6 @@
 package com.common.data.remote;
 
-import com.common.amsubaselib.BuildConfig;
+import com.common.BuildConfig;
 import com.facebook.stetho.okhttp3.StethoInterceptor;
 
 import java.util.Map;

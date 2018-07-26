@@ -6,7 +6,7 @@ import android.view.View
 import android.widget.TextView
 import com.afollestad.materialdialogs.GravityEnum
 import com.afollestad.materialdialogs.MaterialDialog
-import com.common.amsubaselib.R
+import com.common.R
 
 /**
  * author：WangLei

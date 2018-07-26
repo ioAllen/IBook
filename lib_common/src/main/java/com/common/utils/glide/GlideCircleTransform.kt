@@ -1,15 +1,18 @@
-package com.common.marathon.util.glide
+package com.amsu.marathon.util.glide
 
 import android.content.Context
 import android.graphics.*
 
 import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool
 import com.bumptech.glide.load.resource.bitmap.BitmapTransformation
+import java.security.MessageDigest
 
 /**
  * 将图片转化为圆形
  */
 class GlideCircleTransform(context: Context) : BitmapTransformation(context) {
+    override fun updateDiskCacheKey(messageDigest: MessageDigest) {
+    }
 
     private fun circleCrop(pool: BitmapPool, source: Bitmap?): Bitmap? {
         if (source == null)
@@ -40,7 +43,4 @@ class GlideCircleTransform(context: Context) : BitmapTransformation(context) {
         return circleCrop(pool, toTransform)
     }
 
-    override fun getId(): String {
-        return javaClass.name
-    }
 }

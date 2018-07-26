@@ -1,4 +1,4 @@
-package com.common.marathon.util.glide
+package com.amsu.marathon.util.glide
 
 import android.content.Context
 import android.content.res.Resources
@@ -6,12 +6,15 @@ import android.graphics.*
 
 import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool
 import com.bumptech.glide.load.resource.bitmap.BitmapTransformation
+import java.security.MessageDigest
 
 /**
  * 将图片转化为圆角
  * 构造中第二个参数定义半径
  */
 class GlideRoundTransform @JvmOverloads constructor(context: Context, dp: Int = 4) : BitmapTransformation(context) {
+    override fun updateDiskCacheKey(messageDigest: MessageDigest) {
+    }
 
     init {
         radius = Resources.getSystem().displayMetrics.density * dp
@@ -19,10 +22,6 @@ class GlideRoundTransform @JvmOverloads constructor(context: Context, dp: Int = 
 
     override fun transform(pool: BitmapPool, toTransform: Bitmap, outWidth: Int, outHeight: Int): Bitmap? {
         return roundCrop(pool, toTransform)
-    }
-
-    override fun getId(): String {
-        return javaClass.name + Math.round(radius)
     }
 
     companion object {

@@ -1,4 +1,4 @@
-package com.android.i_book
+package com.android.iBook
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity

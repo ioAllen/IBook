@@ -10,7 +10,7 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.common.amsubaselib.R;
+import com.common.R;
 
 import java.util.List;
 
