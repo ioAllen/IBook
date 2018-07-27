@@ -28,6 +28,7 @@ ext {
             "cardview"                     : "com.android.support:cardview-v7:${version["androidSupportSdkVersion"]}",
             "annotations"                  : "com.android.support:support-annotations:${version["androidSupportSdkVersion"]}",
             "exifinterface"                : "com.android.support:exifinterface:${version["androidSupportSdkVersion"]}",
+            "constraint"                   : "com.android.support.constraint:constraint-layout:1.1.2",
 
             "eventbus"                     : "org.greenrobot:eventbus:3.1.1",
 
@@ -37,9 +38,9 @@ ext {
             "okhttp3-okhttp"               : "com.squareup.okhttp3:okhttp:${version["okhttp_version"]}",
 
             //retrofit2
-            "retrofit2"                     : "com.squareup.retrofit2:retrofit:${version["retrofit_version"]}",
-            "retrofit2-converter-gson"      : "com.squareup.retrofit2:converter-gson:${version["retrofit_version"]}",
-            "retrofit2-adapter-rxjava2"     : "com.squareup.retrofit2:adapter-rxjava2:${version["retrofit_version"]}",
+            "retrofit2"                    : "com.squareup.retrofit2:retrofit:${version["retrofit_version"]}",
+            "retrofit2-converter-gson"     : "com.squareup.retrofit2:converter-gson:${version["retrofit_version"]}",
+            "retrofit2-adapter-rxjava2"    : "com.squareup.retrofit2:adapter-rxjava2:${version["retrofit_version"]}",
 
             "stetho"                       : "com.facebook.stetho:stetho:${version["stetho_version"]}",
             "stetho-okhttp3"               : "com.facebook.stetho:stetho-okhttp3:${version["stetho_version"]}",
@@ -85,8 +86,8 @@ ext {
             "auto-value-parcel"            : 'com.ryanharter.auto.value:auto-value-parcel:0.2.5',
 
             //dagger2
-            "dagger2"                       : "com.google.dagger:dagger:${version["dagger_version"]}",
-            "dagger2-compiler"              : "com.google.dagger:dagger-compiler:${version["dagger_version"]}",
+            "dagger2"                      : "com.google.dagger:dagger:${version["dagger_version"]}",
+            "dagger2-compiler"             : "com.google.dagger:dagger-compiler:${version["dagger_version"]}",
 
             "arouter"                      : "com.alibaba:arouter-api:1.3.1",
             "arouter-compiler"             : "com.alibaba:arouter-compiler:1.1.4",

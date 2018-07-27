@@ -1,7 +1,7 @@
 package com.common.utils
 
 import android.content.Context
-import com.common.base.App
+import com.common.base.BaseApplication
 import com.common.di.component.AppComponent
 
 /**
@@ -13,7 +13,6 @@ object CommonUtils {
 
     fun obtainAppComponentFromContext(context: Context): AppComponent {
         Preconditions.checkNotNull(context, "%s cannot be null", Context::class.java.name)
-        Preconditions.checkState(context.applicationContext is App, "Application does not implements App")
-        return (context.applicationContext as App).getAppComponent()
+        return BaseApplication[context].getAppComponent()
     }
 }

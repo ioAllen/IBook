@@ -39,6 +39,7 @@ dependencies {
     api rootProject.ext.dependencies["cardview"]
     api rootProject.ext.dependencies["annotations"]
     api rootProject.ext.dependencies["exifinterface"]
+    api rootProject.ext.dependencies["constraint"]
 
     //okhttp3
     api rootProject.ext.dependencies["okhttp3-logging-interceptor"]
