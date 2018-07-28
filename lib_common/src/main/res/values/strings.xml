@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AmsuBaseLib</string>
+    <string name="app_name">commonLib</string>
     <string name="confirm">确定</string>
     <string name="cancel">取消</string>
     <string name="download_file_size">%1$s/%2$s</string>

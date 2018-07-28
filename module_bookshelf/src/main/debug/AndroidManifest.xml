@@ -9,7 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/public_AppTheme">
 
-        <activity android:name="com.moduleBookshelf.ui.BookshelfLaunchActivity">
+        <activity
+            android:name="com.moduleBookshelf.ui.launch.BookShelfLaunchActivity"
+            android:theme="@style/public_AppTheme_NoActionBar_Transparent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,7 +19,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.BookshelfMainActivity"
+            android:name=".ui.bookshelf.BookshelfActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.readbook.ReadBookActivity"
             android:screenOrientation="portrait" />
     </application>
 </manifest>

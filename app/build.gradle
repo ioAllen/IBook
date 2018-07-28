@@ -45,7 +45,9 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':lib_common')
-    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    if (!isBuildModule.toBoolean()) {
+        implementation project(':module_bookshelf')
+    }
 
     //auto-value
     compileOnly rootProject.ext.dependencies["auto-value-annotations"]
@@ -56,4 +58,6 @@ dependencies {
 
     //dagger2
     kapt rootProject.ext.dependencies["dagger2-compiler"]
+    //ARouter
+    kapt rootProject.ext.dependencies["arouter-compiler"]
 }

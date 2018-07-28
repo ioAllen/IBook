@@ -3,7 +3,7 @@
 
     <application>
         <activity
-            android:name=".ui.BookshelfMainActivity"
+            android:name=".ui.readbook.ReadBookActivity"
             android:screenOrientation="portrait" />
     </application>
 </manifest>

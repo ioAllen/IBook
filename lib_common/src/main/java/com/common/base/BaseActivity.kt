@@ -12,6 +12,7 @@ import com.afollestad.materialdialogs.MaterialDialog
 import com.common.R
 import com.common.utils.DialogHelper
 import com.common.utils.IStringUtils
+import com.common.utils.StatusBarUtil
 import com.common.widget.TitleBar
 
 /**
@@ -38,6 +39,7 @@ abstract class BaseActivity : AppCompatActivity() {
         if (layout != 0) {
             setContentView(layout)
         }
+        addBackEvent()
         initData()
     }
 
@@ -58,6 +60,8 @@ abstract class BaseActivity : AppCompatActivity() {
             setActionBarElevation()
             addCustomView(actionBar)
         }
+        StatusBarUtil.setTranslucent(this, 0)
+        StatusBarUtil.setLightMode(this)
     }
 
     /**
@@ -78,7 +82,7 @@ abstract class BaseActivity : AppCompatActivity() {
     /**
      * 去除ActionBar底部的阴影部分
      */
-    private fun setActionBarElevation() {
+    fun setActionBarElevation() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             val actionBar = supportActionBar
             if (actionBar != null) {
