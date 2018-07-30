@@ -6,7 +6,7 @@ import com.common.utils.CommonUtils
 import com.common.utils.LayoutManagerUtil
 import com.moduleBookshelf.R
 import com.moduleBookshelf.data.test.TestData
-import com.moduleBookshelf.ui.base.BaseFragment
+import com.moduleBookshelf.ui.base.BookshelfBaseFragment
 import kotlinx.android.synthetic.main.bookshelf_main_fragment.*
 import javax.inject.Inject
 
@@ -16,7 +16,7 @@ import javax.inject.Inject
  * QQ:619321796
  */
 @Route(path = RouterHub.BOOKSHELF_MAIN_FRAGMENT)
-class BookshelfFragment : BaseFragment() {
+class BookshelfFragment : BookshelfBaseFragment() {
 
     @Inject
     lateinit var mAdapter: BookshelfAdapter

@@ -1,4 +1,4 @@
-package com.moduleBookshelf.di.component
+package com.moduleBookMall.di.component
 
 
 import com.common.di.PerActivity
@@ -10,6 +10,6 @@ import dagger.Subcomponent
  */
 @PerActivity
 @Subcomponent(modules = [(ActivityModule::class)])
-interface ActivityComponent {
+interface BookMallActivityComponent {
 
 }

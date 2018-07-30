@@ -5,14 +5,14 @@ import android.content.Intent
 import com.common.core.RouterHub
 import com.common.utils.CommonUtils
 import com.moduleBookMall.R
-import com.moduleBookMall.ui.base.BaseActivity
+import com.moduleBookMall.ui.base.BookMallBaseActivity
 
 /**
  * author：WangLei
  * date:2018/7/28.
  * QQ:619321796
  */
-class BookMallActivity : BaseActivity() {
+class BookMallActivity : BookMallBaseActivity() {
 
     companion object {
         fun createIntent(context: Context): Intent {

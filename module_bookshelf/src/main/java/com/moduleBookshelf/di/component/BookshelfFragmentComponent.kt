@@ -11,6 +11,6 @@ import dagger.Subcomponent
  */
 @PerFragment
 @Subcomponent(modules = [(FragmentModule::class)])
-interface FragmentComponent {
+interface BookshelfFragmentComponent {
     fun inject(bookshelfFragment: BookshelfFragment)
 }

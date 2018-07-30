@@ -16,9 +16,9 @@ import dagger.Component
  */
 @ConfigPersistent
 @Component(dependencies = [(AppComponent::class)])
-interface ConfigPersistentComponent {
+interface BookshelfConfigPersistentComponent {
 
-    fun activityComponent(activityModule: ActivityModule): ActivityComponent
-    fun fragmentComponent(fragmentModule: FragmentModule): FragmentComponent
+    fun activityComponent(activityModule: ActivityModule): BookshelfActivityComponent
+    fun fragmentComponent(fragmentModule: FragmentModule): BookshelfFragmentComponent
 
 }

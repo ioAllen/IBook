@@ -10,5 +10,5 @@ import dagger.Subcomponent
  */
 @PerFragment
 @Subcomponent(modules = [(FragmentModule::class)])
-interface FragmentComponent {
+interface BookMallFragmentComponent {
 }

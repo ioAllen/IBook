@@ -5,14 +5,14 @@ import android.content.Intent
 import com.common.core.RouterHub
 import com.common.utils.CommonUtils
 import com.moduleBookshelf.R
-import com.moduleBookshelf.ui.base.BaseActivity
+import com.moduleBookshelf.ui.base.BookshelfBaseActivity
 
 /**
  * author：WangLei
  * date:2018/7/28.
  * QQ:619321796
  */
-class BookshelfActivity : BaseActivity() {
+class BookshelfActivity : BookshelfBaseActivity() {
 
     companion object {
         fun createIntent(context: Context): Intent {
