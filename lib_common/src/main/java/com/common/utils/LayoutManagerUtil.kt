@@ -19,11 +19,11 @@ object LayoutManagerUtil {
         return LinearLayoutManager(context)
     }
 
-    fun getHorizontalLinearLayoutManager(context: Context): LinearLayoutManager {
+    fun getHorizontalLinearLayoutManager(context: Context?): LinearLayoutManager {
         return LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
     }
 
-    fun getGridLayoutManager(context: Context, spanCount: Int): GridLayoutManager {
+    fun getGridLayoutManager(context: Context?, spanCount: Int): GridLayoutManager {
         return GridLayoutManager(context, spanCount)
     }
 }

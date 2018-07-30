@@ -4,7 +4,7 @@ import com.common.base.BaseActivity
 import com.common.base.BaseApplication
 import com.common.utils.StatusBarUtil
 import com.moduleBookshelf.R
-import com.moduleBookshelf.ui.bookshelf.BookshelfFragment
+import com.moduleBookshelf.ui.bookshelf.BookshelfActivity
 
 /**
  * author：WangLei
@@ -18,10 +18,14 @@ class BookShelfLaunchActivity : BaseActivity() {
         return R.layout.bookshelf_launch_activity
     }
 
+    override fun noStatusBar(): Boolean {
+        return false
+    }
+
     override fun initData() {
-        StatusBarUtil.setTranslucent(this)
+        StatusBarUtil.setTranslucent(this, 30)
         BaseApplication[this].mHandler.postDelayed({
-            startActivity(BookshelfFragment.createIntent(this))
+            startActivity(BookshelfActivity.createIntent(this))
             finish()
         }, 2000)
     }

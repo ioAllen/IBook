@@ -20,7 +20,6 @@ class MainActivity : BaseActivity() {
 
     override fun initData() {
         setSupportActionBar(toolbar)
-//        setActionBarElevation()
         initTab()
     }
 
@@ -31,13 +30,17 @@ class MainActivity : BaseActivity() {
         mTabLayout.tabMode = TabLayout.MODE_SCROLLABLE
 
         val fragmentList = ArrayList<Fragment>()
-        val fragment1 = CommonUtils.obtainARouterFragment(RouterHub.BOOKSHELF_MAIN_FRAGMENT)
-        val fragment2 = CommonUtils.obtainARouterFragment(RouterHub.BOOKSHELF_MAIN_FRAGMENT)
-        fragmentList.add(fragment1)
-        fragmentList.add(fragment2)
+        val fragmentBookshelf = CommonUtils.obtainARouterFragment(RouterHub.BOOKSHELF_MAIN_FRAGMENT)
+        val fragmentBookMall = CommonUtils.obtainARouterFragment(RouterHub.BOOKMall_MAIN_FRAGMENT)
+        if (fragmentBookshelf != null) {
+            fragmentList.add(fragmentBookshelf)
+        }
+        if (fragmentBookMall != null) {
+            fragmentList.add(fragmentBookMall)
+        }
 
         val fragmentAdapter = TabFragmentAdapter(supportFragmentManager, fragmentList, tabList)
-        mViewPager.adapter = fragmentAdapter//给ViewPager设置适配器
-        mTabLayout.setupWithViewPager(mViewPager)//将TabLayout和ViewPager关联起来。
+        mViewPager.adapter = fragmentAdapter
+        mTabLayout.setupWithViewPager(mViewPager)
     }
 }

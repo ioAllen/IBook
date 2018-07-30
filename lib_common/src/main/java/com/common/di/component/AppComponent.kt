@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import com.common.di.ApplicationContext
 import com.common.di.module.ApplicationModule
+import com.common.utils.ToastHelper
 import dagger.Component
 import javax.inject.Singleton
 
@@ -20,4 +21,6 @@ interface AppComponent {
     fun context(): Context
 
     fun application(): Application
+
+    fun toastHelper(): ToastHelper
 }

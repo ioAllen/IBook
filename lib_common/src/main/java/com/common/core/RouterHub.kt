@@ -12,17 +12,17 @@ interface RouterHub {
         /**
          * 宿主 App 组件
          */
-        const val APP = "/app"
+        private const val APP = "/app"
 
         /**
          * 书架组件
          */
-        const val BOOKSHELF = "/bookshelf"
+        private const val BOOKSHELF = "/bookshelf"
 
         /**
          * 书城组件
          */
-        const val BOOK_Mall = "/book_mall"
+        private const val BOOK_Mall = "/book_mall"
 
         /*****************************************宿主App分组***********************************************/
         /**
@@ -36,10 +36,6 @@ interface RouterHub {
 
 
         /*****************************************书架分组**************************************************/
-        /**
-         * 启动页
-         */
-        const val BOOKSHELF_LAUNCH_ACTIVITY = "$BOOKSHELF/LaunchActivity"
 
         /**
          * 书架fragment
@@ -50,5 +46,12 @@ interface RouterHub {
          * 读书界面
          */
         const val BOOKSHELF_READ_BOOK_ACTIVITY = "$BOOKSHELF/ReadBookActivity"
+
+        /*****************************************书城分组**************************************************/
+
+        /**
+         * 书城fragment
+         */
+        const val BOOKMall_MAIN_FRAGMENT = "$BOOK_Mall/BookMallFragment"
     }
 }

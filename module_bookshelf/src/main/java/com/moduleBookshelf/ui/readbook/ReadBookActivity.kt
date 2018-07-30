@@ -1,9 +1,9 @@
 package com.moduleBookshelf.ui.readbook
 
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.common.base.BaseActivity
 import com.common.core.RouterHub
 import com.moduleBookshelf.R
+import com.moduleBookshelf.ui.base.BaseActivity
 
 /**
  * author：WangLei

@@ -16,7 +16,7 @@ object CommonUtils {
     /**
      * 获得application的Component
      */
-    fun obtainAppComponentFromContext(context: Context): AppComponent {
+    fun obtainAppComponentFromContext(context: Context?): AppComponent {
         Preconditions.checkNotNull(context, "%s cannot be null", Context::class.java.name)
         return BaseApplication[context].getAppComponent()
     }
@@ -32,10 +32,9 @@ object CommonUtils {
     /**
      * 通过path加载一个fragment
      */
-    fun obtainARouterFragment(path: String): Fragment {
+    fun obtainARouterFragment(path: String): Fragment? {
         Preconditions.checkNotNull(path, "Fragment路径不能为空")
-        val obj = ARouter.getInstance().build(path).navigation()
-//        val fragment = ARouter.getInstance().build("/test/fragment").navigation() as Fragment
+        val obj = ARouter.getInstance().build(path).navigation() ?: return null
         Preconditions.checkArgument(obj is Fragment, "加载目标不是Fragment")
         return obj as Fragment
     }

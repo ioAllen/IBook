@@ -21,8 +21,12 @@ class LaunchActivity : BaseActivity() {
         return R.layout.activity_launch
     }
 
+    override fun noStatusBar(): Boolean {
+        return false
+    }
+
     override fun initData() {
-        StatusBarUtil.setTranslucent(this)
+        StatusBarUtil.setTransparent(this)
         BaseApplication[this].mHandler.postDelayed({
             CommonUtils.navigation(this, RouterHub.APP_MAIN_ACTIVITY)
             finish()

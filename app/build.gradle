@@ -47,6 +47,7 @@ dependencies {
     implementation project(':lib_common')
     if (!isBuildModule.toBoolean()) {
         implementation project(':module_bookshelf')
+        implementation project(':module_bookmall')
     }
 
     //auto-value

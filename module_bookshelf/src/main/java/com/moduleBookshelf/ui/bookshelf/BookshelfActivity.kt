@@ -1,9 +1,11 @@
 package com.moduleBookshelf.ui.bookshelf
 
-import com.common.base.BaseActivity
+import android.content.Context
+import android.content.Intent
 import com.common.core.RouterHub
 import com.common.utils.CommonUtils
 import com.moduleBookshelf.R
+import com.moduleBookshelf.ui.base.BaseActivity
 
 /**
  * author：WangLei
@@ -11,6 +13,13 @@ import com.moduleBookshelf.R
  * QQ:619321796
  */
 class BookshelfActivity : BaseActivity() {
+
+    companion object {
+        fun createIntent(context: Context): Intent {
+            return Intent(context, BookshelfActivity::class.java)
+        }
+    }
+
     override fun attachLayoutRes(): Int {
         return R.layout.activity_content
     }

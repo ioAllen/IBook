@@ -51,7 +51,8 @@
                     android:layout_height="@dimen/x100"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="@dimen/x20"
+                    android:layout_marginLeft="@dimen/x30"
+                    android:layout_marginRight="@dimen/x30"
                     android:contentDescription="@null"
                     android:src="@drawable/mrtx" />
             </RelativeLayout>
@@ -63,6 +64,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <include layout="@layout/view_line_horizontal_e1" />
 
         <android.support.v4.view.ViewPager
             android:id="@+id/mViewPager"

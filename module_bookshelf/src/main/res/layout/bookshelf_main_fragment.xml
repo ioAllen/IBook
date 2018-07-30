@@ -4,9 +4,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/testBut"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/bookshelfRv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/bookshelf_app_name" />
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/x28"
+        android:paddingRight="@dimen/x28" />
 </LinearLayout>

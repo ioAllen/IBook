@@ -3,6 +3,7 @@ package com.moduleBookshelf.di.component
 
 import com.common.di.PerFragment
 import com.common.di.module.FragmentModule
+import com.moduleBookshelf.ui.bookshelf.BookshelfFragment
 import dagger.Subcomponent
 
 /**
@@ -11,4 +12,5 @@ import dagger.Subcomponent
 @PerFragment
 @Subcomponent(modules = [(FragmentModule::class)])
 interface FragmentComponent {
+    fun inject(bookshelfFragment: BookshelfFragment)
 }

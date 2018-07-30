@@ -33,6 +33,7 @@ abstract class BaseFragment : RxFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        injection()
         initData()
     }
 
@@ -40,6 +41,13 @@ abstract class BaseFragment : RxFragment() {
     protected abstract fun attachLayoutRes(): Int
 
     protected abstract fun initData()
+
+    /**
+     * 注入dagger，选择性重写
+     */
+    protected open fun injection() {
+
+    }
 
     protected fun showProgressDialog(stringRes: Int, isCancel: Boolean) {
         dismissProgressDialog()

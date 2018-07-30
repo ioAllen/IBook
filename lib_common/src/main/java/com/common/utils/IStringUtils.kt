@@ -1,6 +1,10 @@
 package com.common.utils
 
 import android.content.Context
+import android.widget.ImageView
+import com.common.R
+import com.common.base.BaseApplication
+import com.common.utils.glide.GlideImgHelper
 
 object IStringUtils {
 
@@ -30,11 +34,35 @@ object IStringUtils {
     }
 
     fun showToast(context: Context, msg: String) {
-        ToastHelper.show(context, msg)
+        BaseApplication[context].getAppComponent().toastHelper().show(msg)
     }
 
     fun showToast(context: Context, msg: Int) {
-        ToastHelper.show(context, msg)
+        BaseApplication[context].getAppComponent().toastHelper().show(msg)
+    }
+
+    /**
+     * 显示通用的图片
+     *
+     */
+    fun displayImage(context: Context, path: String?, imageView: ImageView) {
+        if (!isNullOrEmpty(path)) {
+            GlideImgHelper.loadImage(context, path!!, imageView)
+        } else {
+            imageView.setImageResource(R.drawable.default_image)
+        }
+    }
+
+    /**
+     * 显示头像的图片
+     *
+     */
+    fun displayAvatarImage(context: Context, path: String?, imageView: ImageView) {
+        if (!isNullOrEmpty(path)) {
+            GlideImgHelper.loadAvatarImage(context, path!!, imageView)
+        } else {
+            imageView.setImageResource(R.drawable.contact_list_pic_big)
+        }
     }
 
 
