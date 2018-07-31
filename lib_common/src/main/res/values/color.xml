@@ -1,22 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="color_00000000">#00000000</color>
     <color name="color_ff222222">#ff222222</color>
     <color name="color_ffb93221">#ffb93221</color>
     <color name="color_ff151515">#ff151515</color>
     <color name="color_ffe1e1e3">#ffe1e1e3</color>
     <color name="color_fff5f5f5">#fff5f5f5</color>
+    <color name="color_ffffffff">#ffffffff</color>
 
     <color name="public_colorPrimary">#ffffff</color>
     <color name="public_colorPrimaryDark">#ffffff</color>
     <color name="public_colorAccent">#FF4081</color>
 
-    <color name="public_app_color">#ff2fa3ed</color>
+    <color name="public_app_color">#FF4081</color>
 
-    <color name="btn_default_light_normal">#00000000</color>
     <color name="btn_default_light_pressed">#40ffffff</color>
+    <color name="btn_default_dark_pressed">#40000000</color>
     <color name="btn_context_menu_normal">#ffffff</color>
     <color name="btn_context_menu_pressed">#30000000</color>
     <color name="color_ff000000">#ff000000</color>
     <color name="color_ff262a32">#ff262a32</color>
     <color name="color_20000000">#20000000</color>
+    <color name="color_ff797979">#ff797979</color>
+    <color name="color_ff858585">#ff858585</color>
+    <color name="color_ffb6b6b6">#ffb6b6b6</color>
 </resources>

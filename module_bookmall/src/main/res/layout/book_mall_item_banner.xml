@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="100dip">
+
+    <cn.bingoogolapple.bgabanner.BGABanner
+        android:id="@+id/main_banner"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:banner_indicatorGravity="bottom|right"
+        app:banner_isNeedShowIndicatorOnOnlyOnePage="true"
+        app:banner_isNumberIndicator="true"
+        app:banner_numberIndicatorTextColor="@color/color_ffffffff"
+        app:banner_numberIndicatorTextSize="@dimen/x24"
+        app:banner_pointAutoPlayAble="true"
+        app:banner_pointContainerBackground="@color/color_00000000"
+        app:banner_transitionEffect="defaultEffect" />
+</android.support.constraint.ConstraintLayout>

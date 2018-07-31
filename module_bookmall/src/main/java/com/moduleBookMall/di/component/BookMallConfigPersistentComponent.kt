@@ -1,11 +1,10 @@
-package com.moduleBookshelf.di.component
+package com.moduleBookMall.di.component
 
 
 import com.common.di.ConfigPersistent
 import com.common.di.component.AppComponent
 import com.common.di.module.ActivityModule
 import com.common.di.module.FragmentModule
-import com.moduleBookMall.di.component.BookMallActivityComponent
 import dagger.Component
 
 /**

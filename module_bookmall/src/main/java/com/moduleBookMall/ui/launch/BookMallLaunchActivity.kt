@@ -27,7 +27,7 @@ class BookMallLaunchActivity : BaseActivity() {
         BaseApplication[this].mHandler.postDelayed({
             startActivity(BookMallActivity.createIntent(this))
             finish()
-        }, 2000)
+        }, 500)
     }
 
 }

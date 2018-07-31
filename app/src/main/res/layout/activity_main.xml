@@ -40,20 +40,23 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_toLeftOf="@+id/avatarIb"
-                    android:background="@drawable/btn_default_light"
+                    android:background="@drawable/btn_default_dark"
                     android:contentDescription="@null"
                     android:padding="@dimen/x36"
                     android:src="@drawable/icon_search" />
 
                 <ImageView
                     android:id="@+id/avatarIb"
-                    android:layout_width="@dimen/x100"
-                    android:layout_height="@dimen/x100"
+                    android:layout_width="@dimen/x120"
+                    android:layout_height="@dimen/x120"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="@dimen/x30"
                     android:layout_marginRight="@dimen/x30"
+                    android:background="@drawable/btn_default_dark"
+                    android:clickable="true"
                     android:contentDescription="@null"
+                    android:padding="@dimen/x10"
                     android:src="@drawable/mrtx" />
             </RelativeLayout>
         </android.support.v7.widget.Toolbar>

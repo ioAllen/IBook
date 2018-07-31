@@ -1,8 +1,9 @@
-package com.moduleBookshelf.di.component
+package com.moduleBookMall.di.component
 
 
 import com.common.di.PerFragment
 import com.common.di.module.FragmentModule
+import com.moduleBookMall.ui.bookMall.BookMallFragment
 import dagger.Subcomponent
 
 /**
@@ -11,4 +12,6 @@ import dagger.Subcomponent
 @PerFragment
 @Subcomponent(modules = [(FragmentModule::class)])
 interface BookMallFragmentComponent {
+
+    fun inject(bookMallFragment: BookMallFragment)
 }

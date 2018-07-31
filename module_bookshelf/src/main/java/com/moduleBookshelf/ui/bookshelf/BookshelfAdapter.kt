@@ -1,8 +1,9 @@
 package com.moduleBookshelf.ui.bookshelf
 
 import android.widget.ImageView
-import com.chad.library.adapter.base.BaseQuickAdapter
-import com.chad.library.adapter.base.BaseViewHolder
+import com.alibaba.android.vlayout.LayoutHelper
+import com.common.library.adapter.base.BaseQuickAdapter
+import com.common.library.adapter.base.BaseViewHolder
 import com.common.utils.IStringUtils
 import com.moduleBookshelf.R
 import com.moduleBookshelf.data.bean.BookshelfBean
@@ -23,5 +24,9 @@ constructor() : BaseQuickAdapter<BookshelfBean, BaseViewHolder>((R.layout.booksh
             }
             helper?.setText(R.id.bookNameTv, item.bookName)
         }
+    }
+
+    override fun onCreateLayoutHelper(): LayoutHelper? {
+        return null
     }
 }

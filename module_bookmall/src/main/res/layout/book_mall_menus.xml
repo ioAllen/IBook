@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_ffffffff"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <FrameLayout
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingBottom="@dimen/x30"
+        android:paddingTop="@dimen/x30">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/btn_default_dark"
+            android:clickable="true"
+            android:drawablePadding="@dimen/x10"
+            android:drawableTop="@drawable/icon_book_type"
+            android:gravity="center"
+            android:padding="@dimen/x20"
+            android:text="@string/book_mall_menu_sort"
+            android:textColor="@color/color_ff000000"
+            android:textSize="@dimen/x38" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingBottom="@dimen/x20"
+        android:paddingTop="@dimen/x20">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/btn_default_dark"
+            android:clickable="true"
+            android:drawablePadding="@dimen/x10"
+            android:drawableTop="@drawable/icon_top"
+            android:gravity="center"
+            android:padding="@dimen/x20"
+            android:text="@string/book_mall_menu_top"
+            android:textColor="@color/color_ff000000"
+            android:textSize="@dimen/x38" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingBottom="@dimen/x20"
+        android:paddingTop="@dimen/x20">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/btn_default_dark"
+            android:clickable="true"
+            android:drawablePadding="@dimen/x10"
+            android:drawableTop="@drawable/icon_book"
+            android:gravity="center"
+            android:padding="@dimen/x20"
+            android:text="@string/book_mall_menu_over"
+            android:textColor="@color/color_ff000000"
+            android:textSize="@dimen/x38" />
+    </FrameLayout>
+</LinearLayout>

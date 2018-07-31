@@ -12,8 +12,8 @@
 
         <ImageView
             android:id="@+id/coverIv"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/y380"
+            android:layout_width="@dimen/x280"
+            android:layout_height="@dimen/y360"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
 

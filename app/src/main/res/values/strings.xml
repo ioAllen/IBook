@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">IBook</string>
-    <string name="app_bookshelf">书架</string>
+    <string name="app_bookshelf">我的书架</string>
     <string name="app_bookMall">书城</string>
 </resources>

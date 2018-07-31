@@ -1,7 +1,6 @@
 package com.common.di.module
 
 import android.support.v4.app.Fragment
-
 import dagger.Module
 import dagger.Provides
 

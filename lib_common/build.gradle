@@ -78,8 +78,14 @@ dependencies {
     api rootProject.ext.dependencies["rxlifecycle"]
     api rootProject.ext.dependencies["rxlifecycle-components"]
 
-    //BaseRecyclerAdapter
-    api rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"]
+    //banner
+    api rootProject.ext.dependencies["banner"]
+
+    //vlayout
+    api ('com.alibaba.android:vlayout:1.2.8@aar') {
+        transitive = true
+    }
+
     //timber
     api rootProject.ext.dependencies["timber"]
     //kotlin

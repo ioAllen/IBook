@@ -27,7 +27,7 @@ class BookShelfLaunchActivity : BaseActivity() {
         BaseApplication[this].mHandler.postDelayed({
             startActivity(BookshelfActivity.createIntent(this))
             finish()
-        }, 2000)
+        }, 500)
     }
 
 }

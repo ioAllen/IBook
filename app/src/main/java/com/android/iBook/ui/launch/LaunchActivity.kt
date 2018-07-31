@@ -30,7 +30,7 @@ class LaunchActivity : BaseActivity() {
         BaseApplication[this].mHandler.postDelayed({
             CommonUtils.navigation(this, RouterHub.APP_MAIN_ACTIVITY)
             finish()
-        }, 2000)
+        }, 500)
     }
 
 }

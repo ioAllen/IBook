@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/itemRootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/btn_context_menu"
+    android:paddingBottom="@dimen/x26"
+    android:paddingLeft="@dimen/x36"
+    android:paddingRight="@dimen/x36"
+    android:paddingTop="@dimen/x26">
+
+    <ImageView
+        android:id="@+id/itemCoverIv"
+        android:layout_width="@dimen/x280"
+        android:layout_height="@dimen/y360" />
+
+    <RelativeLayout
+        android:id="@+id/topLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/itemCoverIv">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/itemGradeTv"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/itemNameTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/x20"
+                android:textColor="@color/color_ff000000"
+                android:textSize="@dimen/x48" />
+
+            <TextView
+                android:id="@+id/itemAuthorTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x20"
+                android:paddingLeft="@dimen/x20"
+                android:textColor="@color/color_ff858585"
+                android:textSize="@dimen/x42" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/itemGradeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/x36"
+            android:text="10.0"
+            android:textColor="@color/public_colorAccent"
+            android:textSize="@dimen/x52"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/itemContentTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/topLL"
+        android:layout_marginTop="@dimen/x20"
+        android:layout_toRightOf="@+id/itemCoverIv"
+        android:maxLines="3"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/x20"
+        android:textColor="@color/color_ff858585"
+        android:textSize="@dimen/x42" />
+</RelativeLayout>

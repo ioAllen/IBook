@@ -5,9 +5,9 @@ import android.os.Bundle
 import com.common.base.BaseFragment
 import com.common.di.module.FragmentModule
 import com.common.utils.CommonUtils
-import com.moduleBookshelf.di.component.BookMallConfigPersistentComponent
-import com.moduleBookshelf.di.component.DaggerBookMallConfigPersistentComponent
-import com.moduleBookshelf.di.component.BookMallFragmentComponent
+import com.moduleBookMall.di.component.BookMallConfigPersistentComponent
+import com.moduleBookMall.di.component.BookMallFragmentComponent
+import com.moduleBookMall.di.component.DaggerBookMallConfigPersistentComponent
 import timber.log.Timber
 import java.util.*
 import java.util.concurrent.atomic.AtomicLong

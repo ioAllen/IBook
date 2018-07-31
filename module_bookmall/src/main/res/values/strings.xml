@@ -1,3 +1,10 @@
 <resources>
     <string name="book_mall_app_name">module_bookMall</string>
+    <string name="book_mall_menu_sort">分类</string>
+    <string name="book_mall_menu_top">排行榜</string>
+    <string name="book_mall_menu_over">完本</string>
+    <string name="book_mall_high_mark">高分神作</string>
+    <string name="book_mall_recommend">热门推荐</string>
+    <string name="book_mall_over_recommend">完本推荐</string>
+    <string name="book_mall_change">换一批</string>
 </resources>

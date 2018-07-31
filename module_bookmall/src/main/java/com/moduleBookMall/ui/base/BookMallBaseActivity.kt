@@ -6,8 +6,8 @@ import com.common.base.BaseActivity
 import com.common.di.module.ActivityModule
 import com.common.utils.CommonUtils
 import com.moduleBookMall.di.component.BookMallActivityComponent
-import com.moduleBookshelf.di.component.BookMallConfigPersistentComponent
-import com.moduleBookshelf.di.component.DaggerBookMallConfigPersistentComponent
+import com.moduleBookMall.di.component.BookMallConfigPersistentComponent
+import com.moduleBookMall.di.component.DaggerBookMallConfigPersistentComponent
 import timber.log.Timber
 import java.util.*
 import java.util.concurrent.atomic.AtomicLong
