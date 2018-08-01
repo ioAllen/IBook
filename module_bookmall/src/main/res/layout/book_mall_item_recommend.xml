@@ -63,6 +63,7 @@
         android:layout_below="@+id/topLL"
         android:layout_marginTop="@dimen/x20"
         android:layout_toRightOf="@+id/itemCoverIv"
+        android:ellipsize="end"
         android:maxLines="3"
         android:orientation="vertical"
         android:paddingLeft="@dimen/x20"

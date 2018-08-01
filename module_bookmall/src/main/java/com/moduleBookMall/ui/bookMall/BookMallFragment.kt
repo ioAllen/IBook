@@ -18,6 +18,7 @@ import javax.inject.Inject
  * author：WangLei
  * date:2018/7/26.
  * QQ:619321796
+ * 书城界面
  */
 @Route(path = RouterHub.BOOKMall_MAIN_FRAGMENT)
 class BookMallFragment : BookMallBaseFragment() {
@@ -43,6 +44,11 @@ class BookMallFragment : BookMallBaseFragment() {
     private lateinit var bookMallItemContentTitleHotRecommend: BookMallItemContentTitle
 
     /**
+     * 完本推荐标题
+     */
+    private lateinit var bookMallItemContentTitleOverRecommend: BookMallItemContentTitle
+
+    /**
      * 单个书籍view
      */
     private lateinit var bookMallItemBookItem: BookMallItemBookItem
@@ -51,6 +57,9 @@ class BookMallFragment : BookMallBaseFragment() {
     lateinit var bookMallItemRecommendAdapter: BookMallItemRecommendAdapter
     @Inject
     lateinit var bookMallItemBookAdapter: BookMallItemBookAdapter
+
+    @Inject
+    lateinit var bookMallItemOverBookAdapter: BookMallItemBookAdapter
 
     override fun attachLayoutRes(): Int {
         return R.layout.book_mall_main_fragment
@@ -65,6 +74,7 @@ class BookMallFragment : BookMallBaseFragment() {
         bookMallItemMenus = BookMallItemMenus(context)
         bookMallItemContentTitleTopRecommend = BookMallItemContentTitle(context)
         bookMallItemContentTitleHotRecommend = BookMallItemContentTitle(context)
+        bookMallItemContentTitleOverRecommend = BookMallItemContentTitle(context)
         bookMallItemBookItem = BookMallItemBookItem(context)
 
         val layoutManager = VirtualLayoutManager(context!!)
@@ -78,6 +88,8 @@ class BookMallFragment : BookMallBaseFragment() {
 
         bookMallItemBanner.setData(TestData.loadBannerData())
 
+        val bookList = TestData.loadBookshelfData()
+
         //填充banner
         val adapters = DelegateAdapterUtil.getAdapterList()
         adapters.add(DelegateAdapter.simpleAdapter(bookMallItemBanner))
@@ -90,24 +102,30 @@ class BookMallFragment : BookMallBaseFragment() {
         adapters.add(DelegateAdapter.simpleAdapter(bookMallItemContentTitleTopRecommend))
 
         //填充高分神作内容
-        bookMallItemRecommendAdapter.addData(TestData.loadBookshelfData())
+        bookMallItemRecommendAdapter.addData(bookList)
         adapters.add(bookMallItemRecommendAdapter)
-
 
         //填充热门推荐标题
         bookMallItemContentTitleHotRecommend.setItemTitle(R.string.book_mall_recommend)
         bookMallItemContentTitleHotRecommend.setChangeListener(View.OnClickListener { showToast("换一批") })
         adapters.add(DelegateAdapter.simpleAdapter(bookMallItemContentTitleHotRecommend))
 
-
-        //填充热门推荐内容
-        val hotList = TestData.loadBookshelfData()
-
-        bookMallItemBookItem.convert(hotList[0])
+        //填充单个热门书籍
+        bookMallItemBookItem.convert(bookList[0])
         adapters.add(DelegateAdapter.simpleAdapter(bookMallItemBookItem))
 
-        bookMallItemBookAdapter.addData(hotList.subList(1, hotList.size))
+        //填充3个热门推荐
+        bookMallItemBookAdapter.addData(bookList.subList(1, 4))
         adapters.add(bookMallItemBookAdapter)
+
+        //填充完本推荐标题
+        bookMallItemContentTitleOverRecommend.setItemTitle(R.string.book_mall_over_recommend)
+        bookMallItemContentTitleOverRecommend.setChangeListener(View.OnClickListener { showToast("换一批") })
+        adapters.add(DelegateAdapter.simpleAdapter(bookMallItemContentTitleOverRecommend))
+
+        //填充6个完本推荐
+        bookMallItemOverBookAdapter.addData(bookList)
+        adapters.add(bookMallItemOverBookAdapter)
 
         mDelegateAdapter?.setAdapters(adapters)
     }
