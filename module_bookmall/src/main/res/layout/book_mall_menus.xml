@@ -4,7 +4,8 @@
     android:layout_height="wrap_content"
     android:background="@color/color_ffffffff"
     android:gravity="center"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:baselineAligned="false">
 
     <FrameLayout
         android:layout_width="0dip"
@@ -14,11 +15,11 @@
         android:paddingTop="@dimen/x30">
 
         <TextView
+            android:id="@+id/mallMenusBut1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@drawable/btn_default_dark"
-            android:clickable="true"
             android:drawablePadding="@dimen/x10"
             android:drawableTop="@drawable/icon_book_type"
             android:gravity="center"
@@ -36,11 +37,11 @@
         android:paddingTop="@dimen/x20">
 
         <TextView
+            android:id="@+id/mallMenusBut2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@drawable/btn_default_dark"
-            android:clickable="true"
             android:drawablePadding="@dimen/x10"
             android:drawableTop="@drawable/icon_top"
             android:gravity="center"
@@ -58,16 +59,38 @@
         android:paddingTop="@dimen/x20">
 
         <TextView
+            android:id="@+id/mallMenusBut3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@drawable/btn_default_dark"
-            android:clickable="true"
             android:drawablePadding="@dimen/x10"
             android:drawableTop="@drawable/icon_book"
             android:gravity="center"
             android:padding="@dimen/x20"
             android:text="@string/book_mall_menu_over"
+            android:textColor="@color/color_ff000000"
+            android:textSize="@dimen/x38" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingBottom="@dimen/x20"
+        android:paddingTop="@dimen/x20">
+
+        <TextView
+            android:id="@+id/mallMenusBut4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/btn_default_dark"
+            android:drawablePadding="@dimen/x10"
+            android:drawableTop="@drawable/icon_find"
+            android:gravity="center"
+            android:padding="@dimen/x20"
+            android:text="@string/book_mall_menu_find"
             android:textColor="@color/color_ff000000"
             android:textSize="@dimen/x38" />
     </FrameLayout>

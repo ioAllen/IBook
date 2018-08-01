@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/x30"
+    android:background="@color/color_ffffffff"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/x36">
+
+        <LinearLayout
+            android:id="@+id/filterHotLL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/book_mall_hot_book"
+                android:textColor="@color/btn_text_color_menu"
+                android:textSize="@dimen/x40" />
+
+            <View
+                android:layout_width="@dimen/x80"
+                android:layout_height="@dimen/x5"
+                android:layout_marginTop="@dimen/x15"
+                android:background="@color/public_app_color" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/filterTopLL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x60"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/book_mall_top_grade"
+                android:textColor="@color/btn_text_color_menu"
+                android:textSize="@dimen/x40" />
+
+            <View
+                android:layout_width="@dimen/x80"
+                android:layout_height="@dimen/x5"
+                android:layout_marginTop="@dimen/x15"
+                android:background="@color/public_app_color"
+                android:visibility="invisible" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/x36">
+
+        <TextView
+            android:id="@+id/filterTypeTv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/book_mall_classify_type_1"
+            android:textColor="@color/btn_text_color_menu"
+            android:textSize="@dimen/x40" />
+
+        <TextView
+            android:id="@+id/filterTypeTv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x60"
+            android:text="@string/book_mall_classify_type_2"
+            android:textColor="@color/btn_text_color_menu"
+            android:textSize="@dimen/x40" />
+
+        <TextView
+            android:id="@+id/filterTypeTv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x60"
+            android:text="@string/book_mall_classify_type_3"
+            android:textColor="@color/btn_text_color_menu"
+            android:textSize="@dimen/x40" />
+    </LinearLayout>
+</LinearLayout>

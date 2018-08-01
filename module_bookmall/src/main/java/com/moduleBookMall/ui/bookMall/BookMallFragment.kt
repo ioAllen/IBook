@@ -10,7 +10,7 @@ import com.moduleBookMall.R
 import com.moduleBookMall.data.test.TestData
 import com.moduleBookMall.ui.base.BookMallBaseFragment
 import com.moduleBookMall.utils.DelegateAdapterUtil
-import kotlinx.android.synthetic.main.book_mall_main_fragment.*
+import kotlinx.android.synthetic.main.book_mall_recycler_list.*
 import javax.inject.Inject
 
 
@@ -20,10 +20,10 @@ import javax.inject.Inject
  * QQ:619321796
  * 书城界面
  */
-@Route(path = RouterHub.BOOKMall_MAIN_FRAGMENT)
+@Route(path = RouterHub.BOOK_MALL_MAIN_FRAGMENT)
 class BookMallFragment : BookMallBaseFragment() {
 
-    private var mDelegateAdapter: DelegateAdapter? = null
+    private lateinit var mDelegateAdapter: DelegateAdapter
     /**
      * banner
      */
@@ -62,7 +62,7 @@ class BookMallFragment : BookMallBaseFragment() {
     lateinit var bookMallItemOverBookAdapter: BookMallItemBookAdapter
 
     override fun attachLayoutRes(): Int {
-        return R.layout.book_mall_main_fragment
+        return R.layout.book_mall_recycler_list
     }
 
     override fun injection() {
@@ -102,7 +102,7 @@ class BookMallFragment : BookMallBaseFragment() {
         adapters.add(DelegateAdapter.simpleAdapter(bookMallItemContentTitleTopRecommend))
 
         //填充高分神作内容
-        bookMallItemRecommendAdapter.addData(bookList)
+        bookMallItemRecommendAdapter.addData(bookList.subList(0, 3))
         adapters.add(bookMallItemRecommendAdapter)
 
         //填充热门推荐标题
@@ -127,6 +127,6 @@ class BookMallFragment : BookMallBaseFragment() {
         bookMallItemOverBookAdapter.addData(bookList)
         adapters.add(bookMallItemOverBookAdapter)
 
-        mDelegateAdapter?.setAdapters(adapters)
+        mDelegateAdapter.setAdapters(adapters)
     }
 }

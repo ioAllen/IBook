@@ -1,4 +1,4 @@
-package com.moduleBookMall.ui.bookMall
+package com.moduleBookMall.ui.find
 
 import android.view.View
 import android.widget.ImageView
@@ -16,7 +16,7 @@ import javax.inject.Inject
  * date:2018/7/30.
  * QQ:619321796
  */
-class BookMallItemRecommendAdapter @Inject constructor() : BaseQuickAdapter<BookRecommendBean, BaseViewHolder>((R.layout.book_mall_item_recommend)) {
+class BookMallFindNewsAdapter @Inject constructor() : BaseQuickAdapter<BookRecommendBean, BaseViewHolder>((R.layout.book_mall_item_find_news)) {
     override fun onCreateLayoutHelper(): LayoutHelper {
         return LinearLayoutHelper()
     }
@@ -29,7 +29,7 @@ class BookMallItemRecommendAdapter @Inject constructor() : BaseQuickAdapter<Book
             }
             helper?.setText(R.id.itemNameTv, item.bookName)
             helper?.setText(R.id.itemAuthorTv, item.author)
-            helper?.setText(R.id.itemContentTv, item.content)
+            helper?.setText(R.id.itemContentTv, "第三百三十四章 我，不服！")
             helper?.getView<View>(R.id.itemRootLayout)?.setOnClickListener { }
         }
     }

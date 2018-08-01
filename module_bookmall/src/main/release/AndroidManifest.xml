@@ -1,2 +1,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.moduleBookMall" />
+    package="com.moduleBookMall">
+
+    <application>
+        <activity
+            android:name=".ui.classify.BookMallClassifyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.classifyList.BookMallClassifyListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.find.BookMallFindActivity"
+            android:screenOrientation="portrait" />
+    </application>
+</manifest>

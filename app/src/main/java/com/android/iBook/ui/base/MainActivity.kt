@@ -31,7 +31,7 @@ class MainActivity : BaseActivity() {
 
         val fragmentList = ArrayList<Fragment>()
         val fragmentBookshelf = CommonUtils.obtainARouterFragment(RouterHub.BOOKSHELF_MAIN_FRAGMENT)
-        val fragmentBookMall = CommonUtils.obtainARouterFragment(RouterHub.BOOKMall_MAIN_FRAGMENT)
+        val fragmentBookMall = CommonUtils.obtainARouterFragment(RouterHub.BOOK_MALL_MAIN_FRAGMENT)
         if (fragmentBookshelf != null) {
             fragmentList.add(fragmentBookshelf)
         }

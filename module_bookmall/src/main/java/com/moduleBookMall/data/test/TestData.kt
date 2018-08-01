@@ -42,4 +42,20 @@ object TestData {
         return bannerList
     }
 
+    fun loadTestData(): ArrayList<TestBean> {
+        val list = ArrayList<TestBean>()
+        list.add(TestBean("都市", "https://static.kuaiyankanshu.net/public/cover/80/e3/7e/80e37eebd8292793873fb830e435a3a2.jpg"))
+        list.add(TestBean("玄幻", "https://static.kuaiyankanshu.net/public/cover/87/7c/ea/877cea1382b36a700c199e13d76bda07.jpg"))
+        list.add(TestBean("仙侠", "https://read.fmx.cn/files/article/image/127608/127608s.jpg"))
+        list.add(TestBean("武侠", "https://www.zwdu.com/files/article/image/16/16664/16664s.jpg"))
+        list.add(TestBean("奇幻", "https://read.fmx.cn/files/article/image/127126/127126s.jpg"))
+        list.add(TestBean("历史", "https://read.fmx.cn/files/article/image/125621/125621s.jpg"))
+        list.add(TestBean("军事", "https://read.fmx.cn/files/article/image/126888/126888s.jpg"))
+        list.add(TestBean("校园", "https://read.fmx.cn/files/article/image/127139/127139s.jpg"))
+        list.add(TestBean("悬疑", "https://read.fmx.cn/files/article/image/110095/110095s.jpg"))
+        list.add(TestBean("科幻", "https://read.fmx.cn/files/article/image/127107/127107s.jpg"))
+        list.add(TestBean("游戏", "https://read.fmx.cn/files/article/image/127540/127540s.jpg"))
+        list.add(TestBean("竞技", "https://read.fmx.cn/files/article/image/126780/126780s.jpg"))
+        return list
+    }
 }

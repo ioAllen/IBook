@@ -51,6 +51,21 @@ interface RouterHub {
         /**
          * 书城fragment
          */
-        const val BOOKMall_MAIN_FRAGMENT = "$BOOK_Mall/BookMallFragment"
+        const val BOOK_MALL_MAIN_FRAGMENT = "$BOOK_Mall/BookMallFragment"
+
+        /**
+         * 书城分类
+         */
+        const val BOOK_MALL_CLASSIFY = "$BOOK_Mall/BookMallClassify"
+
+        /**
+         * 书城分类列表
+         */
+        const val BOOK_MALL_CLASSIFY_LIST = "$BOOK_Mall/BookMallClassifyListActivity"
+
+        /**
+         * 发现
+         */
+        const val BOOK_MALL_FIND_ACTIVITY = "$BOOK_Mall/BookMallFindActivity"
     }
 }

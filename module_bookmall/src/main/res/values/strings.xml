@@ -3,8 +3,15 @@
     <string name="book_mall_menu_sort">分类</string>
     <string name="book_mall_menu_top">排行榜</string>
     <string name="book_mall_menu_over">完本</string>
+    <string name="book_mall_menu_find">发现</string>
     <string name="book_mall_high_mark">高分神作</string>
     <string name="book_mall_recommend">热门推荐</string>
     <string name="book_mall_over_recommend">完本推荐</string>
     <string name="book_mall_change">换一批</string>
+    <string name="book_mall_hot_book">热门书籍</string>
+    <string name="book_mall_top_grade">评分最高</string>
+    <string name="book_mall_classify_type_1">全部</string>
+    <string name="book_mall_classify_type_2">连载</string>
+    <string name="book_mall_classify_type_3">完本</string>
+    <string name="book_mall_news_update">最新更新</string>
 </resources>

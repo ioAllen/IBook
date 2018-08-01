@@ -2,6 +2,7 @@ package com.common.utils
 
 import android.content.Context
 import android.support.v4.app.Fragment
+import com.alibaba.android.arouter.facade.Postcard
 import com.alibaba.android.arouter.launcher.ARouter
 import com.common.base.BaseApplication
 import com.common.di.component.AppComponent
@@ -27,6 +28,15 @@ object CommonUtils {
     fun navigation(context: Context?, path: String) {
         Preconditions.checkNotNull(path, "path不能为空")
         ARouter.getInstance().build(path).navigation(context)
+    }
+
+    fun navigation(path: String) {
+        navigation(null, path)
+    }
+
+    fun navigationPostcard(path: String): Postcard {
+        Preconditions.checkNotNull(path, "path不能为空")
+        return ARouter.getInstance().build(path)
     }
 
     /**

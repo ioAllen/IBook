@@ -3,6 +3,7 @@ package com.common.base
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.afollestad.materialdialogs.MaterialDialog
+import com.alibaba.android.arouter.launcher.ARouter
 import com.common.utils.ActionBarUtils
 import com.common.utils.DialogHelper
 import com.common.utils.IStringUtils
@@ -24,6 +25,7 @@ abstract class BaseActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        ARouter.getInstance().inject(this)
         val layout = attachLayoutRes()
         actionBarUtils = ActionBarUtils(this)
         if (layout != 0) {
@@ -69,8 +71,12 @@ abstract class BaseActivity : AppCompatActivity() {
     /**
      * 设置头部标题
      */
-    fun setTitle(title: String) {
+    fun setTitleTxt(title: String) {
         actionBarUtils.actionbarView?.setTitle(title)
+    }
+
+    fun setTitleTxt(title: Int) {
+        setTitleTxt(getString(title))
     }
 
     fun getActionBarView(): TitleBar? {

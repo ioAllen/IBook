@@ -8,8 +8,8 @@ import com.amsu.marathon.util.glide.GlideRoundTransform
 import com.bumptech.glide.Glide
 import com.bumptech.glide.Priority
 import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.target.SimpleTarget
+import com.bumptech.glide.request.target.Target
 import com.common.R
 
 /**
@@ -57,17 +57,11 @@ object GlideImgHelper {
      * @param errorImageView
      */
     private fun loadImageView(context: Context, path: String, imageView: ImageView, loadingImage: Int, errorImageView: Int) {
-        val options = GlideOptions()
-        options.placeholder(loadingImage)
-        options.error(errorImageView)
-        Glide.with(context).load(path).apply(options).into(imageView)
+        GlideApp.with(context).load(path).placeholder(loadingImage).error(errorImageView).into(imageView)
     }
 
     private fun loadImageView(context: Context, path: String, loadingImage: Int, errorImageView: Int, simpleTarget: SimpleTarget<Bitmap>) {
-        val options = GlideOptions()
-        options.placeholder(loadingImage)
-        options.error(errorImageView)
-        Glide.with(context).asBitmap().load(path).apply(options).into(simpleTarget)
+        GlideApp.with(context).asBitmap().load(path).placeholder(loadingImage).error(errorImageView).into(simpleTarget)
     }
 
     /**
@@ -81,11 +75,7 @@ object GlideImgHelper {
      * @param radius
      */
     fun loadImageViewRadius(context: Context, url: String, iv: ImageView, erroImg: Int, emptyImg: Int, radius: Int) {
-        val options = GlideOptions()
-        options.placeholder(emptyImg)
-        options.error(erroImg)
-        options.transform(GlideRoundTransform(context, radius))
-        Glide.with(context).load(url).apply(options).into(iv)
+        GlideApp.with(context).load(url).placeholder(emptyImg).error(erroImg).transform(GlideRoundTransform(context, radius)).into(iv)
     }
 
     /**
@@ -99,12 +89,7 @@ object GlideImgHelper {
      * @param radius
      */
     fun loadImageViewRadiusCrop(context: Context, url: String, iv: ImageView, erroImg: Int, emptyImg: Int, radius: Int) {
-        val options = GlideOptions()
-        options.placeholder(emptyImg)
-        options.error(erroImg)
-        options.transform(GlideRoundTransform(context, radius))
-        options.centerCrop()
-        Glide.with(context).load(url).apply(options).into(iv)
+        GlideApp.with(context).load(url).centerCrop().placeholder(emptyImg).error(erroImg).transform(GlideRoundTransform(context, radius)).into(iv)
     }
 
     /**
@@ -116,14 +101,10 @@ object GlideImgHelper {
      * @param round   是否加载带圆角的图片
      */
     fun loadImageViewRadius(context: Context, url: String, iv: ImageView, round: Boolean) {
-        val options = GlideOptions()
-        options.placeholder(R.drawable.img_loading_default_color)
-        options.error(R.drawable.img_loading_default_color)
         if (round) {
-            options.transform(GlideRoundTransform(context, 6))
-            Glide.with(context).load(url).apply(options).into(iv)
+            GlideApp.with(context).load(url).placeholder(R.drawable.img_loading_default_color).error(R.drawable.img_loading_default_color).transform(GlideRoundTransform(context, 6)).into(iv)
         } else {
-            Glide.with(context).load(url).apply(options).into(iv)
+            GlideApp.with(context).load(url).placeholder(R.drawable.img_loading_default_color).error(R.drawable.img_loading_default_color).into(iv)
         }
     }
 
@@ -135,9 +116,7 @@ object GlideImgHelper {
      * @param iv
      */
     fun loadCircleImageView(context: Context, url: String, iv: ImageView) {
-        val options = GlideOptions()
-        options.transform(GlideCircleTransform(context))
-        Glide.with(context).load(url).apply(options).into(iv)
+        GlideApp.with(context).load(url).transform(GlideCircleTransform(context)).into(iv)
     }
 
     /**
@@ -150,20 +129,16 @@ object GlideImgHelper {
      * @param iv
      */
     fun loadCircleImageView(context: Context, url: String, iv: ImageView, erroImg: Int, emptyImg: Int) {
-        val options = GlideOptions()
-        options.placeholder(emptyImg)
-        options.error(erroImg)
-        options.transform(GlideCircleTransform(context))
-        Glide.with(context).load(url).apply(options).into(iv)
+        GlideApp.with(context).load(url).placeholder(emptyImg).error(erroImg).transform(GlideCircleTransform(context)).into(iv)
     }
 
     fun loadCircleImageViewNoCache(context: Context, url: String, iv: ImageView, erroImg: Int, emptyImg: Int) {
-        val options = GlideOptions()
-        options.placeholder(emptyImg)
-        options.error(erroImg)
-        options.diskCacheStrategy(DiskCacheStrategy.NONE)
-        options.transform(GlideCircleTransform(context))
-        Glide.with(context).load(url).apply(options).into(iv)
+        GlideApp.with(context)
+                .load(url)
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .skipMemoryCache(true).placeholder(emptyImg)
+                .error(erroImg)
+                .transform(GlideCircleTransform(context)).into(iv)
     }
 
 
@@ -175,7 +150,7 @@ object GlideImgHelper {
      * @param mImageView
      */
     fun loadDrawableImageView(mContext: Context, resourceId: Int, mImageView: ImageView) {
-        Glide.with(mContext).load(resourceId).into(mImageView)
+        GlideApp.with(mContext).load(resourceId).into(mImageView)
     }
 
     /**
@@ -188,9 +163,7 @@ object GlideImgHelper {
      * @param mImageView
      */
     fun loadImageViewSize(mContext: Context, path: String, width: Int, height: Int, mImageView: ImageView) {
-        val options = GlideOptions()
-        options.override(width, height)
-        Glide.with(mContext).load(path).apply(options).into(mImageView)
+        GlideApp.with(mContext).load(path).override(width, height).into(mImageView)
     }
 
     /**
@@ -205,11 +178,7 @@ object GlideImgHelper {
      * @param errorImageView
      */
     fun loadImageViewSize(mContext: Context, path: String, width: Int, height: Int, mImageView: ImageView, lodingImage: Int, errorImageView: Int) {
-        val options = GlideOptions()
-        options.placeholder(lodingImage)
-        options.error(errorImageView)
-        options.override(width, height)
-        Glide.with(mContext).load(path).apply(options).into(mImageView)
+        GlideApp.with(mContext).load(path).override(width, height).placeholder(lodingImage).error(errorImageView).into(mImageView)
     }
 
     /**
@@ -220,9 +189,7 @@ object GlideImgHelper {
      * @param mImageView
      */
     fun loadImageViewCache(mContext: Context, path: String, mImageView: ImageView) {
-        val options = GlideOptions()
-        options.skipMemoryCache(true)
-        Glide.with(mContext).load(path).apply(options).into(mImageView)
+        GlideApp.with(mContext).load(path).skipMemoryCache(true).into(mImageView)
     }
 
     /**
@@ -233,9 +200,7 @@ object GlideImgHelper {
      * @param mImageView
      */
     fun loadImageViewPriority(mContext: Context, path: String, mImageView: ImageView) {
-        val options = GlideOptions()
-        options.priority(Priority.NORMAL)
-        Glide.with(mContext).load(path).apply(options).into(mImageView)
+        GlideApp.with(mContext).load(path).priority(Priority.NORMAL).into(mImageView)
     }
 
     /**
@@ -258,25 +223,9 @@ object GlideImgHelper {
      * result：缓存转换后的资源
      */
     fun loadImageViewDiskCache(mContext: Context, path: String, mImageView: ImageView) {
-        val options = GlideOptions()
-        options.diskCacheStrategy(DiskCacheStrategy.ALL)
-        Glide.with(mContext).load(path).apply(options).into(mImageView)
+        GlideApp.with(mContext).load(path).diskCacheStrategy(DiskCacheStrategy.ALL).into(mImageView)
     }
 
-
-    //api也提供了几个常用的动画：比如crossFade()
-
-    /**
-     * 设置加载动画
-     *
-     * @param mContext
-     * @param path
-     * @param anim
-     * @param mImageView
-     */
-    fun loadImageViewAnim(mContext: Context, path: String, mImageView: ImageView) {
-        Glide.with(mContext).load(path).transition(DrawableTransitionOptions().crossFade()).into(mImageView)
-    }
 
     /**
      * 设置缩略图支持(会先加载缩略图)
@@ -297,11 +246,55 @@ object GlideImgHelper {
      * @param mImageView
      */
     fun loadImageViewCrop(mContext: Context, path: String, mImageView: ImageView) {
-        val options = GlideOptions()
-        options.centerCrop()
-        Glide.with(mContext).load(path).apply(options).into(mImageView)
+        GlideApp.with(mContext).load(path).centerCrop().into(mImageView)
     }
 
+
+    /**
+     * 设置静态GIF加载方式
+     *
+     * @param mContext
+     * @param path
+     * @param mImageView
+     */
+    fun loadImageViewStaticGif(mContext: Context, path: String, mImageView: ImageView) {
+        GlideApp.with(mContext).asBitmap().load(path).into(mImageView)
+    }
+
+
+    fun loadImageViewContentBitmap(mContext: Context, path: String, simpleTarget: SimpleTarget<Bitmap>) {
+        GlideApp.with(mContext).asBitmap().load(path).centerCrop().into(simpleTarget)
+    }
+
+    /**
+     * 同步加载图片
+     *
+     * @param context
+     * @param imgUrl
+     * @param target
+     */
+    fun loadBitmapSync(context: Context, imgUrl: String, target: SimpleTarget<Bitmap>) {
+        GlideApp.with(context)
+                .asBitmap()
+                .load(imgUrl)
+                .priority(Priority.NORMAL) //下载的优先级
+                .diskCacheStrategy(DiskCacheStrategy.ALL) //缓存策略
+                .into(target)
+    }
+
+    fun getBitmapSync(context: Context, imgUrl: String): Bitmap? {
+        try {
+            return GlideApp.with(context)
+                    .asBitmap()
+                    .load(imgUrl)
+                    .diskCacheStrategy(DiskCacheStrategy.ALL) //缓存策略
+                    .into(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL)
+                    .get()
+        } catch (e: Exception) {
+            return null
+        }
+
+    }
 
     /**
      * 清理磁盘缓存(需要在子线程中执行)
@@ -309,7 +302,7 @@ object GlideImgHelper {
      * @param mContext
      */
     fun glideClearDiskCache(mContext: Context) {
-        Glide.get(mContext).clearDiskCache()
+        GlideApp.get(mContext).clearDiskCache()
     }
 
     /**
@@ -319,7 +312,7 @@ object GlideImgHelper {
      */
     fun clearDiskCache(context: Context) {
         Thread(Runnable {
-            Glide.get(context).clearDiskCache()//清理磁盘缓存 需要在子线程中执行
+            GlideApp.get(context).clearDiskCache()//清理磁盘缓存 需要在子线程中执行
         }).start()
     }
 
@@ -329,7 +322,7 @@ object GlideImgHelper {
      * @param context
      */
     fun clearMemory(context: Context) {
-        Glide.get(context).clearMemory()//清理内存缓存  可以在UI主线程中进行
+        GlideApp.get(context).clearMemory()//清理内存缓存  可以在UI主线程中进行
     }
 
     /**
@@ -338,7 +331,7 @@ object GlideImgHelper {
      * @param context
      */
     fun resumeRequests(context: Context) {
-        Glide.with(context).resumeRequests()
+        GlideApp.with(context).resumeRequests()
     }
 
     /**
@@ -347,6 +340,6 @@ object GlideImgHelper {
      * @param context
      */
     fun pauseRequests(context: Context) {
-        Glide.with(context).pauseRequests()
+        GlideApp.with(context).pauseRequests()
     }
 }

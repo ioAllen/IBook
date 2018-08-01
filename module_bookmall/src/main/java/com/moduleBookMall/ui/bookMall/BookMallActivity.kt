@@ -27,7 +27,7 @@ class BookMallActivity : BookMallBaseActivity() {
     override fun initData() {
         val fragmentManager = supportFragmentManager
         val transaction = fragmentManager.beginTransaction()
-        val fragment = CommonUtils.obtainARouterFragment(RouterHub.BOOKMall_MAIN_FRAGMENT)
+        val fragment = CommonUtils.obtainARouterFragment(RouterHub.BOOK_MALL_MAIN_FRAGMENT)
         transaction.add(R.id.contentLayout, fragment)
         transaction.commit()
     }

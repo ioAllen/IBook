@@ -10,21 +10,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="@dimen/x15"
-        android:orientation="vertical">
+        android:layout_marginBottom="@dimen/x30"
+        android:layout_marginTop="@dimen/x30">
 
         <ImageView
             android:id="@+id/coverIv"
-            android:layout_width="@dimen/x280"
-            android:layout_height="@dimen/y360" />
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y200" />
 
         <TextView
             android:id="@+id/bookNameTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:ellipsize="end"
-            android:maxLines="1"
             android:padding="@dimen/x10"
             android:textColor="@color/color_ff000000"
             android:textSize="@dimen/x40" />

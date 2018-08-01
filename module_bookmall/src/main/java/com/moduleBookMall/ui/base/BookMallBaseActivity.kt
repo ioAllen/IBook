@@ -23,8 +23,6 @@ abstract class BookMallBaseActivity : BaseActivity() {
     private var mActivityId: Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
         mActivityId = savedInstanceState?.getLong(KEY_ACTIVITY_ID) ?: NEXT_ID.getAndIncrement()
         val bookMallConfigPersistentComponent: BookMallConfigPersistentComponent?
         if (!sComponentsMap.containsKey(mActivityId)) {
@@ -38,6 +36,7 @@ abstract class BookMallBaseActivity : BaseActivity() {
         if (bookMallConfigPersistentComponent != null) {
             mBookMallActivityComponent = bookMallConfigPersistentComponent.activityComponent(ActivityModule(this))
         }
+        super.onCreate(savedInstanceState)
     }
 
     override fun onSaveInstanceState(outState: Bundle?) {
