@@ -1,4 +1,4 @@
-package com.moduleBookMall.utils;
+package com.common.utils;
 
 import com.alibaba.android.vlayout.DelegateAdapter;
 

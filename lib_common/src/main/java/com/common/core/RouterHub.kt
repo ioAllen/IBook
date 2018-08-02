@@ -24,6 +24,11 @@ interface RouterHub {
          */
         private const val BOOK_Mall = "/book_mall"
 
+        /**
+         * 通用组件
+         */
+        private const val Common = "/common"
+
         /*****************************************宿主App分组***********************************************/
         /**
          * 启动页
@@ -67,5 +72,16 @@ interface RouterHub {
          * 发现
          */
         const val BOOK_MALL_FIND_ACTIVITY = "$BOOK_Mall/BookMallFindActivity"
+
+        /*****************************************通用分组**************************************************/
+        /**
+         * 书本详情
+         */
+        const val COMMON_BOOK_DETAILS_ACTIVITY = "$Common/CommonBookDetailsActivity"
+
+        /**
+         * 读书界面
+         */
+        const val COMMON_READ_BOOK_ACTIVITY = "$Common/CommonReadBookActivity"
     }
 }

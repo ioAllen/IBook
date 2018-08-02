@@ -75,4 +75,13 @@ class ActionBarUtils constructor(var activity: AppCompatActivity) {
             }
         }
     }
+
+    fun addTitleBarStatusBarHeight(mTitleBar: TitleBar) {
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
+            val params = mTitleBar.layoutParams
+            val statusBarHeight = StatusBarUtil.getStatusBarHeight(activity)
+            params.height = (activity.resources.getDimension(R.dimen.x150) + statusBarHeight).toInt()
+            mTitleBar.layoutParams = params
+        }
+    }
 }

@@ -3,14 +3,13 @@ package com.common.utils.glide
 import android.content.Context
 import android.graphics.Bitmap
 import android.widget.ImageView
-import com.amsu.marathon.util.glide.GlideCircleTransform
-import com.amsu.marathon.util.glide.GlideRoundTransform
 import com.bumptech.glide.Glide
 import com.bumptech.glide.Priority
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.target.SimpleTarget
 import com.bumptech.glide.request.target.Target
 import com.common.R
+
 
 /**
  * Glide图片加载
@@ -341,5 +340,9 @@ object GlideImgHelper {
      */
     fun pauseRequests(context: Context) {
         GlideApp.with(context).pauseRequests()
+    }
+
+    fun loadBitmap(context: Context,imagePath:String,imageView: ImageView){
+        GlideApp.with(context).asBitmap().load(imagePath).centerCrop().into(600, 600).get();
     }
 }

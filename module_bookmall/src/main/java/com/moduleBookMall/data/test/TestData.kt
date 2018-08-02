@@ -1,6 +1,7 @@
 package com.moduleBookMall.data.test
 
 import com.moduleBookMall.data.bean.BookRecommendBean
+import com.moduleBookMall.data.test.TestBean
 
 /**
  * author：WangLei

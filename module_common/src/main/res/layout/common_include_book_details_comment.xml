@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/x15"
+    android:background="@color/color_ffffffff"
+    android:orientation="vertical">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/x36">
+
+        <View
+            android:layout_width="@dimen/x10"
+            android:layout_height="@dimen/x60"
+            android:background="@color/public_app_color" />
+
+        <TextView
+            android:id="@+id/recommendTitleTv"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x20"
+            android:layout_marginRight="@dimen/x20"
+            android:layout_weight="1"
+            android:text="@string/common_book_details_comment"
+            android:textColor="@color/color_ff000000"
+            android:textSize="@dimen/x48"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/recommendChangeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_context_menu"
+            android:padding="@dimen/x5"
+            android:text="@string/common_book_details_write_comment"
+            android:textColor="@color/public_app_color" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x300"
+        android:gravity="center"
+        android:text="@string/common_book_details_comment_first"
+        android:textSize="@dimen/x48" />
+</LinearLayout>

@@ -1,0 +1,27 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.moduleCommon">
+
+    <application
+        android:name="com.common.base.BaseApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/common_app_name"
+        android:supportsRtl="true"
+        android:theme="@style/public_AppTheme">
+
+        <activity android:name=".ui.launch.CommonLaunchActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.bookDetails.CommonBookDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/public_AppTheme_NoActionBar" />
+        <activity
+            android:name=".ui.readBook.CommonReadBookActivity"
+            android:screenOrientation="portrait" />
+    </application>
+</manifest>

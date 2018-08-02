@@ -4,6 +4,7 @@ import android.view.View
 import android.widget.ImageView
 import com.alibaba.android.vlayout.LayoutHelper
 import com.alibaba.android.vlayout.layout.LinearLayoutHelper
+import com.common.core.BookUtils
 import com.common.library.adapter.base.BaseQuickAdapter
 import com.common.library.adapter.base.BaseViewHolder
 import com.common.utils.IStringUtils
@@ -30,7 +31,7 @@ class BookMallItemRecommendAdapter @Inject constructor() : BaseQuickAdapter<Book
             helper?.setText(R.id.itemNameTv, item.bookName)
             helper?.setText(R.id.itemAuthorTv, item.author)
             helper?.setText(R.id.itemContentTv, item.content)
-            helper?.getView<View>(R.id.itemRootLayout)?.setOnClickListener { }
+            helper?.getView<View>(R.id.itemRootLayout)?.setOnClickListener { BookUtils.loadBookDetail(item.bookName) }
         }
     }
 }

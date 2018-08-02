@@ -1,10 +1,11 @@
 package com.moduleBookshelf.ui.bookshelf
 
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.common.core.BookUtils
 import com.common.core.RouterHub
-import com.common.utils.CommonUtils
 import com.common.utils.LayoutManagerUtil
 import com.moduleBookshelf.R
+import com.moduleBookshelf.data.bean.BookshelfBean
 import com.moduleBookshelf.data.test.TestData
 import com.moduleBookshelf.ui.base.BookshelfBaseFragment
 import kotlinx.android.synthetic.main.bookshelf_main_fragment.*
@@ -35,8 +36,9 @@ class BookshelfFragment : BookshelfBaseFragment() {
 
         mAdapter.addData(TestData.loadBookshelfData())
 
-        mAdapter.setOnItemClickListener { adapter, view, position ->
-            CommonUtils.navigation(context, RouterHub.BOOKSHELF_READ_BOOK_ACTIVITY)
+        mAdapter.setOnItemClickListener { adapter, _, position ->
+            val data = adapter.getItem(position) as BookshelfBean
+            BookUtils.loadBookDetail(data.bookName)
         }
     }
 }

@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.RelativeLayout
+import com.common.core.BookUtils
 import com.common.utils.IStringUtils
 import com.moduleBookMall.R
 import com.moduleBookMall.data.bean.BookRecommendBean
@@ -30,7 +31,7 @@ class BookMallItemBookItem : RelativeLayout {
             itemNameTv.text = item.bookName
             itemAuthorTv.text = item.author
             itemContentTv.text = item.content
-            itemRootLayout.setOnClickListener { }
+            itemRootLayout.setOnClickListener { BookUtils.loadBookDetail(item.bookName) }
         }
     }
 }

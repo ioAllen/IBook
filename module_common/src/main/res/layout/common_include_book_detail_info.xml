@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/public_book_author"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_ffffffff"
+        android:padding="@dimen/x36"
+        android:text="功夫究竟是什么？ 花架子还是杀人技？ 三千年冷兵器战争和无数民间私斗酝酿出来的把式，究竟是不是骗局？ 国术流开创者，功夫小说第一人梦入神机，在本书中为您揭秘。 止戈为武，点到为止。 “你若无敌，将会如何？” “得饶人处且饶人。”"
+        android:textColor="@color/color_ff262a32" />
+</LinearLayout>

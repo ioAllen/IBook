@@ -91,6 +91,8 @@ dependencies {
     //kotlin
     api rootProject.ext.dependencies["kotlin"]
 
+    api rootProject.ext.dependencies["blur"]
+
     //glide图片加载
     api rootProject.ext.dependencies["glide"]
     kapt rootProject.ext.dependencies["glide-compiler"]

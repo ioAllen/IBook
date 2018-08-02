@@ -4,6 +4,7 @@ import android.view.View
 import android.widget.ImageView
 import com.alibaba.android.vlayout.LayoutHelper
 import com.alibaba.android.vlayout.layout.GridLayoutHelper
+import com.common.core.BookUtils
 import com.common.library.adapter.base.BaseQuickAdapter
 import com.common.library.adapter.base.BaseViewHolder
 import com.common.utils.IStringUtils
@@ -25,7 +26,7 @@ constructor() : BaseQuickAdapter<BookRecommendBean, BaseViewHolder>((R.layout.bo
                 IStringUtils.displayImage(mContext, item.coverPath, coverIv)
             }
             helper?.setText(R.id.bookNameTv, item.bookName)
-            helper?.getView<View>(R.id.itemRootLayout)?.setOnClickListener { }
+            helper?.getView<View>(R.id.itemRootLayout)?.setOnClickListener { BookUtils.loadBookDetail(item.bookName)}
         }
     }
 

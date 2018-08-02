@@ -6,6 +6,8 @@
         <item name="colorPrimary">@color/public_colorPrimary</item>
         <item name="colorPrimaryDark">@color/public_colorPrimaryDark</item>
         <item name="colorAccent">@color/public_colorAccent</item>
+        <item name="android:actionBarSize">@dimen/x150</item>
+        <item name="actionBarSize">@dimen/x150</item>
     </style>
 
     <style name="public_AppTheme_NoActionBar" parent="public_AppTheme">
@@ -58,4 +60,20 @@
     <style name="AppTheme.PopupOverlay" parent="@style/ThemeOverlay.AppCompat.Light" />
 
     <style name="AppTheme.AppBarOverlay" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="public_book_title">
+        <item name="android:textColor">@color/color_ff000000</item>
+        <item name="android:textSize">@dimen/x48</item>
+    </style>
+
+    <style name="public_book_author">
+        <item name="android:textColor">@color/color_ff858585</item>
+        <item name="android:textSize">@dimen/x42</item>
+    </style>
+
+    <style name="public_book_grade">
+        <item name="android:textColor">@color/public_colorAccent</item>
+        <item name="android:textSize">@dimen/x52</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>

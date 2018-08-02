@@ -6,10 +6,10 @@ import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.vlayout.DelegateAdapter
 import com.alibaba.android.vlayout.VirtualLayoutManager
 import com.common.core.RouterHub
+import com.common.utils.DelegateAdapterUtil
 import com.moduleBookMall.R
 import com.moduleBookMall.data.test.TestData
 import com.moduleBookMall.ui.base.BookMallBaseFragment
-import com.moduleBookMall.utils.DelegateAdapterUtil
 import kotlinx.android.synthetic.main.book_mall_recycler_list.*
 import javax.inject.Inject
 

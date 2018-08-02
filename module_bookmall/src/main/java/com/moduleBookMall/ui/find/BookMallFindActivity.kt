@@ -13,6 +13,7 @@ import javax.inject.Inject
  * author：WangLei
  * date:2018/8/1.
  * QQ:619321796
+ * 发现、最新更新
  */
 @Route(path = RouterHub.BOOK_MALL_FIND_ACTIVITY)
 class BookMallFindActivity : BookMallBaseActivity() {

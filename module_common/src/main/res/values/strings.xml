@@ -1,0 +1,12 @@
+<resources>
+    <string name="common_app_name">module_common</string>
+    <string name="common_book_details_like">喜欢</string>
+    <string name="common_book_details_share">分享</string>
+    <string name="common_book_details_catalogue">目录</string>
+    <string name="common_book_details_comment">书评</string>
+    <string name="common_book_details_write_comment">写书评</string>
+    <string name="common_book_details_comment_first">来当载入史册的书评第一人吧</string>
+    <string name="common_book_details_in_bookshelf">加入书架</string>
+    <string name="common_book_details_out_bookshelf">移出书架</string>
+    <string name="common_book_details_read">开始阅读</string>
+</resources>

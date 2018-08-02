@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/y650"
+    android:background="@color/color_ffffffff">
+
+    <ImageView
+        android:id="@+id/detailBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_ffffffff"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/btn_default_light_pressed" />
+
+    <ImageView
+        android:id="@+id/itemCoverIv"
+        android:layout_width="@dimen/x360"
+        android:layout_height="@dimen/y450"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/x36"
+        android:layout_marginRight="@dimen/x36"
+        android:contentDescription="@null" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/x36"
+        android:layout_marginRight="@dimen/x36"
+        android:layout_toEndOf="@+id/itemCoverIv"
+        android:layout_toRightOf="@+id/itemCoverIv"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:id="@+id/topLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/itemGradeTv"
+                android:layout_toStartOf="@+id/itemGradeTv"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/itemNameTv"
+                    style="@style/public_book_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="点道为止" />
+
+                <TextView
+                    android:id="@+id/itemAuthorTv"
+                    style="@style/public_book_author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x20"
+                    android:text="梦入神机"
+                    android:textColor="@color/color_ff262a32" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/itemGradeTv"
+                style="@style/public_book_grade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:text="10.0" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/itemClickCountTv"
+            style="@style/public_book_author"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x20"
+            android:ellipsize="end"
+            android:orientation="vertical"
+            android:text="点击数：2351"
+            android:textColor="@color/color_ff262a32" />
+
+        <TextView
+            android:id="@+id/itemDateTv"
+            style="@style/public_book_author"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x20"
+            android:orientation="vertical"
+            android:text="2小时前"
+            android:textColor="@color/color_ff262a32" />
+
+        <TextView
+            android:id="@+id/itemContentTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x20"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:orientation="vertical"
+            android:text="第370章 蜜獾之家 生命之水非药物"
+            android:textColor="@color/color_ff2fa3ed"
+            android:textSize="@dimen/x42" />
+
+    </LinearLayout>
+
+</RelativeLayout>

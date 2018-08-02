@@ -1,4 +1,4 @@
-package com.amsu.marathon.util.glide
+package com.common.utils.glide
 
 import android.content.Context
 import android.graphics.*

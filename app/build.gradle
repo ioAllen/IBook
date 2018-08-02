@@ -48,6 +48,7 @@ dependencies {
     if (!isBuildModule.toBoolean()) {
         implementation project(':module_bookshelf')
         implementation project(':module_bookmall')
+        implementation project(':module_common')
     }
 
     //auto-value

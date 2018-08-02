@@ -7,11 +7,11 @@ import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.vlayout.DelegateAdapter
 import com.alibaba.android.vlayout.VirtualLayoutManager
 import com.common.core.RouterHub
-import com.moduleBookMall.R
 import com.moduleBookMall.data.test.TestData
+import com.common.utils.DelegateAdapterUtil
+import com.moduleBookMall.R
 import com.moduleBookMall.ui.base.BookMallBaseActivity
 import com.moduleBookMall.ui.bookMall.BookMallItemRecommendAdapter
-import com.moduleBookMall.utils.DelegateAdapterUtil
 import kotlinx.android.synthetic.main.book_mall_classify_list.*
 import javax.inject.Inject
 
@@ -70,7 +70,10 @@ class BookMallClassifyListActivity : BookMallBaseActivity() {
 
         mDelegateAdapter.setAdapters(adapters)
 
+        initEvents(layoutManager)
+    }
 
+    private fun initEvents(layoutManager: VirtualLayoutManager) {
         main_list.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)

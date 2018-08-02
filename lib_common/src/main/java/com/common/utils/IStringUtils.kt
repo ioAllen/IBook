@@ -1,9 +1,11 @@
 package com.common.utils
 
 import android.content.Context
+import android.graphics.Bitmap
 import android.widget.ImageView
 import com.common.R
 import com.common.base.BaseApplication
+import com.common.utils.glide.BlurUtil
 import com.common.utils.glide.GlideImgHelper
 
 object IStringUtils {
@@ -51,6 +53,13 @@ object IStringUtils {
         } else {
             imageView.setImageResource(R.drawable.default_image)
         }
+    }
+
+    /**
+     * 高斯模糊图片
+     */
+    fun displayImageBlur(context: Context, path: String, imageView: ImageView): io.reactivex.Observable<Bitmap> {
+        return BlurUtil.loadBitmap(context, path, imageView)
     }
 
     /**

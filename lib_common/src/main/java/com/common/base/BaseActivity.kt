@@ -21,7 +21,7 @@ abstract class BaseActivity : AppCompatActivity() {
      */
     private var mProgressDialog: MaterialDialog? = null
 
-    private lateinit var actionBarUtils: ActionBarUtils
+    lateinit var actionBarUtils: ActionBarUtils
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

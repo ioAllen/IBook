@@ -24,8 +24,7 @@
     <color name="color_ff797979">#ff797979</color>
     <color name="color_ff858585">#ff858585</color>
     <color name="color_ffb6b6b6">#ffb6b6b6</color>
+    <color name="color_ff2fa3ed">#ff2fa3ed</color>
+    <color name="color_fffe8c00">#fffe8c00</color>
 
-    <color name="fab_color_pressed">#fb5852</color>
-    <color name="fab_color_shadow">#44000000</color>
-    <color name="style_color_accent">#f37873</color>
 </resources>

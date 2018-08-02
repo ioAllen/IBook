@@ -2,10 +2,12 @@ package com.common.widget
 
 import android.app.Activity
 import android.content.Context
+import android.graphics.Bitmap
 import android.util.AttributeSet
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.ImageView
 import android.widget.LinearLayout
 import com.common.R
 import kotlinx.android.synthetic.main.view_action_title.view.*
@@ -96,6 +98,10 @@ class TitleBar : LinearLayout, View.OnClickListener {
         titleName.text = resources.getString(title)
     }
 
+    fun setTitleColor(color: Int) {
+        titleName.setTextColor(color)
+    }
+
     /**
      * 设置右边的文字
      */
@@ -119,5 +125,15 @@ class TitleBar : LinearLayout, View.OnClickListener {
 
     interface OnBackClickListener {
         fun onBack()
+    }
+
+    fun setTitleBarBackgroundBitmap(bitmap: Bitmap?) {
+        if (bitmap != null) {
+            backgroundIv.setImageBitmap(bitmap)
+        }
+    }
+
+    fun getBackgroundImageView(): ImageView {
+        return backgroundIv
     }
 }
