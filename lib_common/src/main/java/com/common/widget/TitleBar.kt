@@ -90,8 +90,10 @@ class TitleBar : LinearLayout, View.OnClickListener {
     /**
      * 设置标题
      */
-    fun setTitle(title: String) {
-        titleName.text = title
+    fun setTitle(title: String?) {
+        if (title != null) {
+            titleName.text = title
+        }
     }
 
     fun setTitle(title: Int) {

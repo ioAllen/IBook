@@ -1,5 +1,6 @@
 package com.common.core
 
+import com.common.data.bean.BookNative
 import com.common.utils.CommonUtils
 
 /**
@@ -9,7 +10,7 @@ import com.common.utils.CommonUtils
  */
 object BookUtils {
 
-    fun loadBookDetail(bookName: String) {
-        CommonUtils.navigationPostcard(RouterHub.COMMON_BOOK_DETAILS_ACTIVITY).withString("bookName", bookName).navigation()
+    fun loadBookDetail(book: BookNative?) {
+        CommonUtils.navigationPostcard(RouterHub.COMMON_BOOK_DETAILS_ACTIVITY).withParcelable("book", book).navigation()
     }
 }

@@ -6,7 +6,7 @@ import com.common.library.adapter.base.BaseQuickAdapter
 import com.common.library.adapter.base.BaseViewHolder
 import com.common.utils.IStringUtils
 import com.moduleBookMall.R
-import com.moduleBookMall.data.test.TestBean
+import com.common.data.test.TestBean
 import javax.inject.Inject
 
 /**

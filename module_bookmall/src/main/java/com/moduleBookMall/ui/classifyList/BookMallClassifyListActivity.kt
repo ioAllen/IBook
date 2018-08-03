@@ -7,7 +7,7 @@ import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.vlayout.DelegateAdapter
 import com.alibaba.android.vlayout.VirtualLayoutManager
 import com.common.core.RouterHub
-import com.moduleBookMall.data.test.TestData
+import com.common.data.test.TestData
 import com.common.utils.DelegateAdapterUtil
 import com.moduleBookMall.R
 import com.moduleBookMall.ui.base.BookMallBaseActivity
@@ -65,7 +65,7 @@ class BookMallClassifyListActivity : BookMallBaseActivity() {
         val adapters = DelegateAdapterUtil.getAdapterList()
         adapters.add(DelegateAdapter.simpleAdapter(bookMallItemClassifyFilter))
 
-        bookMallItemRecommendAdapter.addData(TestData.loadBookshelfData())
+        bookMallItemRecommendAdapter.addData(TestData.loadBookData())
         adapters.add(bookMallItemRecommendAdapter)
 
         mDelegateAdapter.setAdapters(adapters)

@@ -19,8 +19,8 @@
 
     <ImageView
         android:id="@+id/itemCoverIv"
-        android:layout_width="@dimen/x360"
-        android:layout_height="@dimen/y450"
+        android:layout_width="@dimen/x300"
+        android:layout_height="@dimen/y400"
         android:layout_centerVertical="true"
         android:layout_marginLeft="@dimen/x36"
         android:layout_marginRight="@dimen/x36"
@@ -97,18 +97,6 @@
             android:orientation="vertical"
             android:text="2小时前"
             android:textColor="@color/color_ff262a32" />
-
-        <TextView
-            android:id="@+id/itemContentTv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/x20"
-            android:ellipsize="end"
-            android:maxLines="2"
-            android:orientation="vertical"
-            android:text="第370章 蜜獾之家 生命之水非药物"
-            android:textColor="@color/color_ff2fa3ed"
-            android:textSize="@dimen/x42" />
 
     </LinearLayout>
 

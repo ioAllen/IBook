@@ -3,11 +3,11 @@ package com.moduleBookMall.ui.classify
 import android.graphics.Color
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.common.core.RouterHub
+import com.common.data.test.TestBean
+import com.common.data.test.TestData
 import com.common.utils.CommonUtils
 import com.common.utils.LayoutManagerUtil
 import com.moduleBookMall.R
-import com.moduleBookMall.data.test.TestBean
-import com.moduleBookMall.data.test.TestData
 import com.moduleBookMall.ui.base.BookMallBaseActivity
 import kotlinx.android.synthetic.main.book_mall_recycler_list.*
 import javax.inject.Inject

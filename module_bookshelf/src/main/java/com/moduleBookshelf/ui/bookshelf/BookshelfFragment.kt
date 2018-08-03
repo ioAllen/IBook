@@ -3,10 +3,10 @@ package com.moduleBookshelf.ui.bookshelf
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.common.core.BookUtils
 import com.common.core.RouterHub
+import com.common.data.bean.BookNative
+import com.common.data.test.TestData
 import com.common.utils.LayoutManagerUtil
 import com.moduleBookshelf.R
-import com.moduleBookshelf.data.bean.BookshelfBean
-import com.moduleBookshelf.data.test.TestData
 import com.moduleBookshelf.ui.base.BookshelfBaseFragment
 import kotlinx.android.synthetic.main.bookshelf_main_fragment.*
 import javax.inject.Inject
@@ -34,11 +34,11 @@ class BookshelfFragment : BookshelfBaseFragment() {
         bookshelfRv.layoutManager = LayoutManagerUtil.getGridLayoutManager(context, 3)
         bookshelfRv.adapter = mAdapter
 
-        mAdapter.addData(TestData.loadBookshelfData())
+        mAdapter.addData(TestData.loadBookData())
 
         mAdapter.setOnItemClickListener { adapter, _, position ->
-            val data = adapter.getItem(position) as BookshelfBean
-            BookUtils.loadBookDetail(data.bookName)
+            val data = adapter.getItem(position) as BookNative
+            BookUtils.loadBookDetail(data)
         }
     }
 }

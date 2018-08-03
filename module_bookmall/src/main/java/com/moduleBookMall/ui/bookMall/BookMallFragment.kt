@@ -6,9 +6,9 @@ import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.vlayout.DelegateAdapter
 import com.alibaba.android.vlayout.VirtualLayoutManager
 import com.common.core.RouterHub
+import com.common.data.test.TestData
 import com.common.utils.DelegateAdapterUtil
 import com.moduleBookMall.R
-import com.moduleBookMall.data.test.TestData
 import com.moduleBookMall.ui.base.BookMallBaseFragment
 import kotlinx.android.synthetic.main.book_mall_recycler_list.*
 import javax.inject.Inject
@@ -88,7 +88,7 @@ class BookMallFragment : BookMallBaseFragment() {
 
         bookMallItemBanner.setData(TestData.loadBannerData())
 
-        val bookList = TestData.loadBookshelfData()
+        val bookList = TestData.loadBookData()
 
         //填充banner
         val adapters = DelegateAdapterUtil.getAdapterList()
@@ -124,7 +124,7 @@ class BookMallFragment : BookMallBaseFragment() {
         adapters.add(DelegateAdapter.simpleAdapter(bookMallItemContentTitleOverRecommend))
 
         //填充6个完本推荐
-        bookMallItemOverBookAdapter.addData(bookList)
+        bookMallItemOverBookAdapter.addData(bookList.subList(0, 6))
         adapters.add(bookMallItemOverBookAdapter)
 
         mDelegateAdapter.setAdapters(adapters)

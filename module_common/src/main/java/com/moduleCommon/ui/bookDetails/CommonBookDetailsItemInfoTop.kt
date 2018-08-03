@@ -6,6 +6,7 @@ import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.RelativeLayout
+import com.common.data.bean.BookNative
 import com.common.utils.IStringUtils
 import com.common.widget.TitleBar
 import com.moduleCommon.R
@@ -18,7 +19,8 @@ import net.qiujuer.genius.blur.StackBlur
 class CommonBookDetailsItemInfoTop : RelativeLayout {
 
     private val compositeDisposable = CompositeDisposable()
-    var mTitleBar: TitleBar? = null
+    private var mTitleBar: TitleBar? = null
+    private var bookNative: BookNative? = null;
 
     constructor(context: Context?) : super(context) {
         init(context)
@@ -30,29 +32,37 @@ class CommonBookDetailsItemInfoTop : RelativeLayout {
 
     private fun init(context: Context?) {
         LayoutInflater.from(context).inflate(R.layout.common_include_book_detail_info_top, this, true)
-        initData()
     }
 
     private fun initData() {
         itemAuthorTv.paint.flags = Paint.UNDERLINE_TEXT_FLAG
         itemAuthorTv.paint.isAntiAlias = true
 
-        itemContentTv.paint.flags = Paint.UNDERLINE_TEXT_FLAG
-        itemContentTv.paint.isAntiAlias = true
+        detailBackground.alpha = 0.5f
 
-        val path = "https://static.kuaiyankanshu.net/public/cover/80/e3/7e/80e37eebd8292793873fb830e435a3a2.jpg"
-        IStringUtils.displayImage(context, path, itemCoverIv)
-        compositeDisposable.add(IStringUtils.displayImageBlur(context, path, detailBackground)
-                .subscribe(Consumer<Bitmap> { aData ->
-                    val newBitmap = StackBlur.blurNativelyPixels(aData, 20, false)
-                    detailBackground.setImageBitmap(newBitmap)
-                    mTitleBar?.setTitleBarBackgroundBitmap(newBitmap)
-                }))
-        detailBackground.alpha = 0.3f
+        if (bookNative != null) {
+            itemNameTv.text = bookNative?.bookName
+            itemAuthorTv.text = bookNative?.author
+
+            val path = bookNative?.coverPath ?: return
+            IStringUtils.displayImage(context, path, itemCoverIv)
+            compositeDisposable.add(IStringUtils.displayImageBlur(context, path, detailBackground)
+                    .subscribe(Consumer<Bitmap> { aData ->
+                        val newBitmap = StackBlur.blurNativelyPixels(aData, 20, false)
+                        detailBackground.setImageBitmap(newBitmap)
+                        mTitleBar?.setTitleBarBackgroundBitmap(newBitmap)
+                    }))
+        }
+
     }
 
     fun setTitleBar(titleBar: TitleBar) {
         mTitleBar = titleBar
+    }
+
+    fun setData(bookNative: BookNative?) {
+        this.bookNative = bookNative
+        initData()
     }
 
     fun onDestroy() {

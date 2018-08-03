@@ -3,6 +3,7 @@ package com.moduleCommon.di
 
 import com.common.di.PerActivity
 import com.common.di.module.ActivityModule
+import com.moduleCommon.ui.bookDetails.CommonBookDetailsActivity
 import com.moduleCommon.ui.launch.CommonLaunchActivity
 import dagger.Subcomponent
 
@@ -13,4 +14,5 @@ import dagger.Subcomponent
 @Subcomponent(modules = [(ActivityModule::class)])
 interface CommonActivityComponent {
     fun inject(commonLaunchActivity: CommonLaunchActivity)
+    fun inject(commonBookDetailsActivity: CommonBookDetailsActivity)
 }

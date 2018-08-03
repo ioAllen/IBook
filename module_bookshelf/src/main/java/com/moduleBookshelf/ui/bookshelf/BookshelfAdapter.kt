@@ -2,11 +2,11 @@ package com.moduleBookshelf.ui.bookshelf
 
 import android.widget.ImageView
 import com.alibaba.android.vlayout.LayoutHelper
+import com.common.data.bean.BookNative
 import com.common.library.adapter.base.BaseQuickAdapter
 import com.common.library.adapter.base.BaseViewHolder
 import com.common.utils.IStringUtils
 import com.moduleBookshelf.R
-import com.moduleBookshelf.data.bean.BookshelfBean
 import javax.inject.Inject
 
 /**
@@ -15,12 +15,12 @@ import javax.inject.Inject
  * QQ:619321796
  */
 class BookshelfAdapter @Inject
-constructor() : BaseQuickAdapter<BookshelfBean, BaseViewHolder>((R.layout.bookshelf_item_bookshelf)) {
-    override fun convert(helper: BaseViewHolder?, item: BookshelfBean?) {
+constructor() : BaseQuickAdapter<BookNative, BaseViewHolder>((R.layout.bookshelf_item_bookshelf)) {
+    override fun convert(helper: BaseViewHolder?, item: BookNative?) {
         if (item != null) {
             val coverIv = helper?.getView<ImageView>(R.id.coverIv)
             if (coverIv != null) {
-                IStringUtils.displayImage(mContext, item.bookPath, coverIv)
+                IStringUtils.displayImage(mContext, item.coverPath, coverIv)
             }
             helper?.setText(R.id.bookNameTv, item.bookName)
         }

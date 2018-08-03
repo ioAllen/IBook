@@ -1,4 +1,4 @@
-package com.moduleBookMall.data.test
+package com.common.data.test
 
 /**
  * author：WangLei

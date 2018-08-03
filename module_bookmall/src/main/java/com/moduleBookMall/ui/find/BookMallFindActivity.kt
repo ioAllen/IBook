@@ -2,9 +2,9 @@ package com.moduleBookMall.ui.find
 
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.common.core.RouterHub
+import com.common.data.test.TestData
 import com.common.utils.LayoutManagerUtil
 import com.moduleBookMall.R
-import com.moduleBookMall.data.test.TestData
 import com.moduleBookMall.ui.base.BookMallBaseActivity
 import kotlinx.android.synthetic.main.book_mall_recycler_list.*
 import javax.inject.Inject
@@ -36,7 +36,7 @@ class BookMallFindActivity : BookMallBaseActivity() {
         main_list.layoutManager = LayoutManagerUtil.getVerticalLinearLayoutManager(this)
         main_list.adapter = bookMallFindNewsAdapter
 
-        bookMallFindNewsAdapter.addData(TestData.loadBookshelfData())
+        bookMallFindNewsAdapter.addData(TestData.loadBookData())
     }
 
 }
