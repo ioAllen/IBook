@@ -94,6 +94,7 @@ ext {
             "banner"                      : "cn.bingoogolapple:bga-banner:2.1.9@aar",
 
             "blur"                        : "net.qiujuer.genius:blur:2.0.0-beta4",
+            "jsoup"                        : "org.jsoup:jsoup:1.11.3",
     ]
 
 

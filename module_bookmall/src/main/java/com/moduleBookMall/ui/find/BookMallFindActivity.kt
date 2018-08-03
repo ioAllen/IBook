@@ -5,7 +5,9 @@ import com.common.core.RouterHub
 import com.common.data.test.TestData
 import com.common.utils.LayoutManagerUtil
 import com.moduleBookMall.R
+import com.moduleBookMall.jsoup.JsoupManager
 import com.moduleBookMall.ui.base.BookMallBaseActivity
+import com.moduleBookMall.utils.BookMallConstant
 import kotlinx.android.synthetic.main.book_mall_recycler_list.*
 import javax.inject.Inject
 
@@ -20,6 +22,9 @@ class BookMallFindActivity : BookMallBaseActivity() {
 
     @Inject
     lateinit var bookMallFindNewsAdapter: BookMallFindNewsAdapter
+
+    @Inject
+    lateinit var jsoupManager: JsoupManager
 
     override fun attachLayoutRes(): Int {
         return R.layout.book_mall_recycler_list
@@ -37,6 +42,14 @@ class BookMallFindActivity : BookMallBaseActivity() {
         main_list.adapter = bookMallFindNewsAdapter
 
         bookMallFindNewsAdapter.addData(TestData.loadBookData())
+
+        jsoupManager.loadData(BookMallConstant.biquge)
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        jsoupManager.onDestroy()
     }
 
 }

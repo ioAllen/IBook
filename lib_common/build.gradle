@@ -1,35 +1,4 @@
-apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-kapt'
-
-android {
-    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
-    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
-
-    compileOptions {
-        targetCompatibility JavaVersion.VERSION_1_8
-        sourceCompatibility JavaVersion.VERSION_1_8
-    }
-
-    defaultConfig {
-        minSdkVersion rootProject.ext.android["minSdkVersion"]
-        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
-        versionCode rootProject.ext.android["versionCode"]
-        versionName rootProject.ext.android["versionName"]
-
-        testInstrumentationRunner rootProject.ext.dependencies["androidJUnitRunner"]
-
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
-
-}
+apply from:"../common_lib_build.gradle"
 
 dependencies {
     api rootProject.ext.dependencies["eventbus"]
@@ -91,7 +60,10 @@ dependencies {
     //kotlin
     api rootProject.ext.dependencies["kotlin"]
 
+    //blur 高斯模糊
     api rootProject.ext.dependencies["blur"]
+    //jsoup网络爬虫
+    api rootProject.ext.dependencies["jsoup"]
 
     //glide图片加载
     api rootProject.ext.dependencies["glide"]
