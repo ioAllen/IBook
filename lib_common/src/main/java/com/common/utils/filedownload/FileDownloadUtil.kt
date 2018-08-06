@@ -1,7 +1,6 @@
 package com.common.utils.filedownload
 
 import android.content.Context
-import com.common.utils.BaseConstant
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.ResponseBody
@@ -20,7 +19,7 @@ import java.util.concurrent.TimeUnit
 class FileDownloadUtil
 constructor(private val mContext: Context) {
     private var retrofit: Retrofit.Builder? = null
-    private val baseUrlApp = "http://" + BaseConstant.appIp + ":85/"
+    private val baseUrlApp = "http://id:85/"
 //    private val baseUrlApk = "http://118.24.53.144:8080/"
 
     fun fileDownloadFile(name: String, destFileDir: String, destFileName: String, onDownloadListener: OnDownloadListener) {

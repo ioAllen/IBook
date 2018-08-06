@@ -7,6 +7,7 @@ import com.alibaba.android.vlayout.DelegateAdapter
 import com.alibaba.android.vlayout.VirtualLayoutManager
 import com.common.core.RouterHub
 import com.common.data.bean.BookNative
+import com.common.utils.CommonUtils
 import com.common.utils.DelegateAdapterUtil
 import com.common.utils.StatusBarUtil
 import com.moduleCommon.R
@@ -61,6 +62,7 @@ class CommonBookDetailsActivity : CommonBaseActivity() {
         commonBookDetailsItemInfoTop.setTitleBar(mTitleBar)
         commonBookDetailsItemInfoTop.setData(book)
         commonBookDetailsItemInfo.setData(book)
+        commonBookDetailsItemInfoMenus.setData(book)
 
         val layoutManager = VirtualLayoutManager(this)
         main_list.layoutManager = layoutManager
@@ -104,6 +106,13 @@ class CommonBookDetailsActivity : CommonBaseActivity() {
                 }
             }
         })
+
+        bookDetailsReadBt.setOnClickListener {
+            if (book != null && book!!.bookCatalogue != null) {
+                val category = book!!.bookCatalogue?.get(0)
+                CommonUtils.navigationPostcard(RouterHub.COMMON_WEB_VIEW_ACTIVITY).withString("title", category?.title).withString("url", category?.path).navigation()
+            }
+        }
     }
 
     override fun noStatusBar(): Boolean {

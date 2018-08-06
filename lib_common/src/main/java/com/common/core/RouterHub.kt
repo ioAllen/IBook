@@ -83,5 +83,10 @@ interface RouterHub {
          * 读书界面
          */
         const val COMMON_READ_BOOK_ACTIVITY = "$Common/CommonReadBookActivity"
+
+        /**
+         * WebViewActivity
+         */
+        const val COMMON_WEB_VIEW_ACTIVITY = "$Common/CommonWebViewActivity"
     }
 }

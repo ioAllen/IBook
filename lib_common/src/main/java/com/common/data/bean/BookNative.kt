@@ -76,7 +76,7 @@ class BookNative() : Parcelable {
     /**
      * 目录
      */
-    var bookCatalogue: ArrayList<String>? = null
+    var bookCatalogue: ArrayList<BookCatalogue>? = null
 
     constructor(parcel: Parcel) : this() {
         uid = parcel.readString()
@@ -91,21 +91,25 @@ class BookNative() : Parcelable {
         clickCount = parcel.readInt()
         likeCount = parcel.readInt()
         grade = parcel.readFloat()
+        bookLinkPath = parcel.readArrayList(String::class.java.classLoader) as ArrayList<String>?
+        bookCatalogue = parcel.readArrayList(BookCatalogue::class.java.classLoader) as ArrayList<BookCatalogue>?
     }
 
-    override fun writeToParcel(dest: Parcel?, flags: Int) {
-        dest?.writeString(uid)
-        dest?.writeString(bookName)
-        dest?.writeString(coverPath)
-        dest?.writeString(bookDescription)
-        dest?.writeString(author)
-        dest?.writeString(bookTag)
-        dest?.writeString(bookType)
-        dest?.writeString(newsUpdateContent)
-        dest?.writeLong(newsUpdateDate)
-        dest?.writeInt(clickCount)
-        dest?.writeInt(likeCount)
-        dest?.writeFloat(grade)
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeString(uid)
+        parcel.writeString(bookName)
+        parcel.writeString(coverPath)
+        parcel.writeString(bookDescription)
+        parcel.writeString(author)
+        parcel.writeString(bookTag)
+        parcel.writeString(bookType)
+        parcel.writeString(newsUpdateContent)
+        parcel.writeLong(newsUpdateDate)
+        parcel.writeInt(clickCount)
+        parcel.writeInt(likeCount)
+        parcel.writeFloat(grade)
+        parcel.writeList(bookLinkPath)
+        parcel.writeList(bookCatalogue)
     }
 
     override fun describeContents(): Int {
@@ -121,4 +125,6 @@ class BookNative() : Parcelable {
             return arrayOfNulls(size)
         }
     }
+
+
 }

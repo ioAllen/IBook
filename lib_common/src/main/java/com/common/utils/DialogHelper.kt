@@ -141,8 +141,8 @@ object DialogHelper {
      * @param positiveText 按钮文本
      * @return MaterialDialog
      */
-    fun showCommonDialog(activity: Activity, title: String, content: String, positiveText: String, buttonCallback: MaterialDialog.SingleButtonCallback): MaterialDialog {
-        return MaterialDialog.Builder(activity)
+    fun showCommonDialog(context: Context, title: String, content: String, positiveText: String, buttonCallback: MaterialDialog.SingleButtonCallback): MaterialDialog {
+        return MaterialDialog.Builder(context)
                 .title(title)
                 .content(content)
                 .positiveText(positiveText)

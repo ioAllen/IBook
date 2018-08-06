@@ -23,6 +23,7 @@
 
 
         <Button
+            android:id="@+id/bookDetailsBookInBt"
             android:layout_width="@dimen/x500"
             android:layout_height="wrap_content"
             android:background="@drawable/common_bt_white"
@@ -32,6 +33,7 @@
 
 
         <Button
+            android:id="@+id/bookDetailsReadBt"
             android:layout_width="@dimen/x500"
             android:layout_height="wrap_content"
             android:background="@drawable/common_bt_red"

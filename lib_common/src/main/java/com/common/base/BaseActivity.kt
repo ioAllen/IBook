@@ -71,7 +71,7 @@ abstract class BaseActivity : AppCompatActivity() {
     /**
      * 设置头部标题
      */
-    fun setTitleTxt(title: String) {
+    fun setTitleTxt(title: String?) {
         actionBarUtils.actionbarView?.setTitle(title)
     }
 

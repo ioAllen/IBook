@@ -1,13 +1,17 @@
 package com.moduleBookMall.ui.find
 
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.common.core.BookUtils
 import com.common.core.RouterHub
-import com.common.data.test.TestData
+import com.common.data.bean.BookNative
+import com.common.jsoup.JsoupBookDetailsManager
+import com.common.jsoup.JsoupNewsUpdateManager
+import com.common.jsoup.OnBookDataAnalysisListener
+import com.common.jsoup.OnBookDetailsAnalysisListener
+import com.common.utils.CommonConstant
 import com.common.utils.LayoutManagerUtil
 import com.moduleBookMall.R
-import com.moduleBookMall.jsoup.JsoupManager
 import com.moduleBookMall.ui.base.BookMallBaseActivity
-import com.moduleBookMall.utils.BookMallConstant
 import kotlinx.android.synthetic.main.book_mall_recycler_list.*
 import javax.inject.Inject
 
@@ -24,7 +28,10 @@ class BookMallFindActivity : BookMallBaseActivity() {
     lateinit var bookMallFindNewsAdapter: BookMallFindNewsAdapter
 
     @Inject
-    lateinit var jsoupManager: JsoupManager
+    lateinit var jsoupNewsUpdateManager: JsoupNewsUpdateManager
+
+    @Inject
+    lateinit var jsoupBookDetailsManager: JsoupBookDetailsManager
 
     override fun attachLayoutRes(): Int {
         return R.layout.book_mall_recycler_list
@@ -41,15 +48,29 @@ class BookMallFindActivity : BookMallBaseActivity() {
         main_list.layoutManager = LayoutManagerUtil.getVerticalLinearLayoutManager(this)
         main_list.adapter = bookMallFindNewsAdapter
 
-        bookMallFindNewsAdapter.addData(TestData.loadBookData())
 
-        jsoupManager.loadData(BookMallConstant.biquge)
-
+        jsoupNewsUpdateManager.loadData(CommonConstant.biquge)
+        jsoupNewsUpdateManager.setOnBookDataAnalysisListener(object : OnBookDataAnalysisListener {
+            override fun onBookAnalysisSuccess(list: List<BookNative>) {
+                bookMallFindNewsAdapter.addData(list)
+            }
+        })
+        bookMallFindNewsAdapter.setOnItemClickListener { adapter, _, position ->
+            val book = adapter.getItem(position) as BookNative
+            jsoupBookDetailsManager.loadBookCatalogue(book)
+            showProgressDialog(R.string.brvah_loading, true)
+        }
+        jsoupBookDetailsManager.setOnBookDetailsAnalysisListener(object : OnBookDetailsAnalysisListener {
+            override fun onBookAnalysisSuccess(book: BookNative) {
+                dismissProgressDialog()
+                BookUtils.loadBookDetail(book)
+            }
+        })
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        jsoupManager.onDestroy()
+        jsoupNewsUpdateManager.onDestroy()
     }
 
 }

@@ -1,6 +1,7 @@
 package com.moduleCommon.ui.bookDetails
 
 import android.content.Context
+import android.text.Html
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.RelativeLayout
@@ -26,7 +27,7 @@ class CommonBookDetailsItemInfo : RelativeLayout {
     }
 
     private fun initData() {
-        detailDescriptionTv.text = bookNative?.bookDescription
+        detailDescriptionTv.text = Html.fromHtml(bookNative?.bookDescription)
     }
 
     fun setData(bookNative: BookNative?) {

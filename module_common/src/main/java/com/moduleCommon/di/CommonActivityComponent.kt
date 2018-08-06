@@ -5,6 +5,7 @@ import com.common.di.PerActivity
 import com.common.di.module.ActivityModule
 import com.moduleCommon.ui.bookDetails.CommonBookDetailsActivity
 import com.moduleCommon.ui.launch.CommonLaunchActivity
+import com.moduleCommon.ui.webview.CommonWebViewActivity
 import dagger.Subcomponent
 
 /**
@@ -15,4 +16,5 @@ import dagger.Subcomponent
 interface CommonActivityComponent {
     fun inject(commonLaunchActivity: CommonLaunchActivity)
     fun inject(commonBookDetailsActivity: CommonBookDetailsActivity)
+    fun inject(webViewActivity: CommonWebViewActivity)
 }

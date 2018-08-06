@@ -1,6 +1,6 @@
 package com.moduleBookMall.ui.find
 
-import android.view.View
+import android.app.Activity
 import android.widget.ImageView
 import com.alibaba.android.vlayout.LayoutHelper
 import com.alibaba.android.vlayout.layout.LinearLayoutHelper
@@ -9,6 +9,8 @@ import com.common.library.adapter.base.BaseQuickAdapter
 import com.common.library.adapter.base.BaseViewHolder
 import com.common.utils.IStringUtils
 import com.moduleBookMall.R
+import com.common.jsoup.JsoupBookDetailsManager
+import com.common.jsoup.OnBookDetailsAnalysisListener
 import javax.inject.Inject
 
 /**
@@ -24,13 +26,30 @@ class BookMallFindNewsAdapter @Inject constructor() : BaseQuickAdapter<BookNativ
     override fun convert(helper: BaseViewHolder?, item: BookNative?) {
         if (item != null) {
             val coverIv = helper?.getView<ImageView>(R.id.itemCoverIv)
-            if (coverIv != null) {
-                IStringUtils.displayImage(mContext, item.coverPath, coverIv)
+            val coverPath = item.coverPath
+            if (IStringUtils.isNullOrEmpty(coverPath)) {
+                val detailsAnalysis = JsoupBookDetailsManager()
+                detailsAnalysis.loadData(item)
+                detailsAnalysis.setOnBookDetailsAnalysisListener(object : OnBookDetailsAnalysisListener {
+                    override fun onBookAnalysisSuccess(book: BookNative) {
+                        displayImage(coverIv, book.coverPath)
+                        detailsAnalysis.onDestroy()
+                    }
+                })
             }
+            displayImage(coverIv, coverPath)
             helper?.setText(R.id.itemNameTv, item.bookName)
             helper?.setText(R.id.itemAuthorTv, item.author)
-            helper?.setText(R.id.itemContentTv, "第三百三十四章 我，不服！")
-            helper?.getView<View>(R.id.itemRootLayout)?.setOnClickListener { }
+            helper?.setText(R.id.itemContentTv, item.newsUpdateContent)
+        }
+    }
+
+    private fun displayImage(coverIv: ImageView?, coverPath: String?) {
+        if (mContext is Activity) {
+            val a = mContext as Activity
+            if (!a.isFinishing && coverIv != null) {
+                IStringUtils.displayImage(mContext, coverPath, coverIv)
+            }
         }
     }
 }

@@ -9,5 +9,8 @@
         <activity
             android:name=".ui.readBook.CommonReadBookActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.webview.CommonWebViewActivity"
+            android:screenOrientation="portrait" />
     </application>
 </manifest>
