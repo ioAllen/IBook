@@ -10,7 +10,7 @@ import com.common.utils.CommonUtils
  */
 object BookUtils {
 
-    fun loadBookDetail(book: BookNative?) {
-        CommonUtils.navigationPostcard(RouterHub.COMMON_BOOK_DETAILS_ACTIVITY).withParcelable("book", book).navigation()
+    fun loadBookDetail(bookNative: BookNative?) {
+        CommonUtils.navigationPostcard(RouterHub.COMMON_BOOK_DETAILS_ACTIVITY).withParcelable("bookNative", bookNative).navigation()
     }
 }

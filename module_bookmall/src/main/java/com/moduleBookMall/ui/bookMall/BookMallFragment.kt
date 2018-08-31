@@ -102,8 +102,8 @@ class BookMallFragment : BookMallBaseFragment() {
         adapters.add(DelegateAdapter.simpleAdapter(bookMallItemContentTitleTopRecommend))
 
         //填充高分神作内容
-        bookMallItemRecommendAdapter.addData(bookList.subList(0, 3))
-        adapters.add(bookMallItemRecommendAdapter)
+//        bookMallItemRecommendAdapter.addData(bookList.subList(0, 3))
+//        adapters.add(bookMallItemRecommendAdapter)
 
         //填充热门推荐标题
         bookMallItemContentTitleHotRecommend.setItemTitle(R.string.book_mall_recommend)

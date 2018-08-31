@@ -27,7 +27,7 @@ class CommonBookDetailsActivity : CommonBaseActivity() {
 
     @Autowired
     @JvmField
-    var book: BookNative? = null
+    var bookNative: BookNative? = null
 
     private lateinit var mDelegateAdapter: DelegateAdapter
 
@@ -49,7 +49,7 @@ class CommonBookDetailsActivity : CommonBaseActivity() {
 
     override fun initData() {
         StatusBarUtil.setTransparentForWindow(this)
-        mTitleBar.setTitle(book?.bookName)
+        mTitleBar.setTitle(bookNative?.bookName)
         mTitleBar.showViewBreak(true)
         mTitleBar.alpha = 0f
         mTitleBar.getBackgroundImageView().alpha = 0f
@@ -60,9 +60,9 @@ class CommonBookDetailsActivity : CommonBaseActivity() {
         commonBookDetailsItemInfo = CommonBookDetailsItemInfo(this)
         commonBookDetailsItemInfoComment = CommonBookDetailsItemInfoComment(this)
         commonBookDetailsItemInfoTop.setTitleBar(mTitleBar)
-        commonBookDetailsItemInfoTop.setData(book)
-        commonBookDetailsItemInfo.setData(book)
-        commonBookDetailsItemInfoMenus.setData(book)
+        commonBookDetailsItemInfoTop.setData(bookNative)
+        commonBookDetailsItemInfo.setData(bookNative)
+        commonBookDetailsItemInfoMenus.setData(bookNative)
 
         val layoutManager = VirtualLayoutManager(this)
         main_list.layoutManager = layoutManager
@@ -108,8 +108,8 @@ class CommonBookDetailsActivity : CommonBaseActivity() {
         })
 
         bookDetailsReadBt.setOnClickListener {
-            if (book != null && book!!.bookCatalogue != null) {
-                val category = book!!.bookCatalogue?.get(0)
+            if (bookNative != null && bookNative!!.bookCatalogue != null) {
+                val category = bookNative!!.bookCatalogue?.get(0)
                 CommonUtils.navigationPostcard(RouterHub.COMMON_WEB_VIEW_ACTIVITY).withString("title", category?.title).withString("url", category?.path).navigation()
             }
         }

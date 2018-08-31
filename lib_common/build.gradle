@@ -72,6 +72,12 @@ dependencies {
     api rootProject.ext.dependencies["dagger2"]
     kapt rootProject.ext.dependencies["dagger2-compiler"]
 
+    compileOnly rootProject.ext.dependencies["auto-value-annotations"]
+    compileOnly rootProject.ext.dependencies["auto-value-gson"]
+    kapt rootProject.ext.dependencies["auto-value"]
+    kapt rootProject.ext.dependencies["auto-value-parcel"]
+    kapt rootProject.ext.dependencies["auto-value-gson"]
+
     api(rootProject.ext.dependencies["arouter"]) {
         exclude module: 'support-v4'
         exclude module: 'support-annotations'

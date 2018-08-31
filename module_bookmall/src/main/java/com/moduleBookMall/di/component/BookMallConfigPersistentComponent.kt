@@ -5,6 +5,7 @@ import com.common.di.ConfigPersistent
 import com.common.di.component.AppComponent
 import com.common.di.module.ActivityModule
 import com.common.di.module.FragmentModule
+import com.moduleBookMall.di.module.BookMallModule
 import dagger.Component
 
 /**
@@ -18,7 +19,7 @@ import dagger.Component
 @Component(dependencies = [(AppComponent::class)])
 interface BookMallConfigPersistentComponent {
 
-    fun activityComponent(activityModule: ActivityModule): BookMallActivityComponent
+    fun activityComponent(activityModule: ActivityModule,bookMallModule: BookMallModule): BookMallActivityComponent
     fun fragmentComponent(fragmentModule: FragmentModule): BookMallFragmentComponent
 
 }

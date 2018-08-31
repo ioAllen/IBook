@@ -8,6 +8,8 @@ import com.common.data.test.TestData
 import com.common.utils.CommonUtils
 import com.common.utils.LayoutManagerUtil
 import com.moduleBookMall.R
+import com.moduleBookMall.data.modle.Book
+import com.moduleBookMall.data.modle.BookData
 import com.moduleBookMall.ui.base.BookMallBaseActivity
 import kotlinx.android.synthetic.main.book_mall_recycler_list.*
 import javax.inject.Inject

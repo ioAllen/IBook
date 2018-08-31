@@ -7,7 +7,9 @@ import com.alibaba.android.arouter.launcher.ARouter
 import com.common.utils.ActionBarUtils
 import com.common.utils.DialogHelper
 import com.common.utils.IStringUtils
+import com.common.utils.SwipeRefreshLayoutUtil
 import com.common.widget.TitleBar
+import timber.log.Timber
 
 /**
  * author：WangLei
@@ -22,6 +24,8 @@ abstract class BaseActivity : AppCompatActivity() {
     private var mProgressDialog: MaterialDialog? = null
 
     lateinit var actionBarUtils: ActionBarUtils
+
+    protected var mSwipeRefreshLayoutUtil: SwipeRefreshLayoutUtil? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -103,6 +107,21 @@ abstract class BaseActivity : AppCompatActivity() {
      */
     protected open fun noStatusBar(): Boolean {
         return true
+    }
+
+    fun handleError(code: Int, msg: Any?) {
+        mSwipeRefreshLayoutUtil?.finishRefresh()
+        Timber.e(msg.toString())
+        dismissProgressDialog()
+        val message = msg.toString()
+        showToast(message)
+    }
+
+    /**
+     * 重提示（对话框提示）
+     */
+    fun powerfulHints(code: Int, msg: Any?) {
+
     }
 
 }

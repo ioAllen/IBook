@@ -7,11 +7,14 @@ import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.vlayout.DelegateAdapter
 import com.alibaba.android.vlayout.VirtualLayoutManager
 import com.common.core.RouterHub
-import com.common.data.test.TestData
+import com.common.library.adapter.base.BaseQuickAdapter
 import com.common.utils.DelegateAdapterUtil
+import com.common.utils.SwipeRefreshLayoutUtil
 import com.moduleBookMall.R
-import com.moduleBookMall.ui.base.BookMallBaseActivity
+import com.moduleBookMall.data.modle.BookData
+import com.moduleBookMall.ui.base.BookMallBasePagingActivity
 import com.moduleBookMall.ui.bookMall.BookMallItemRecommendAdapter
+import junit.framework.Test
 import kotlinx.android.synthetic.main.book_mall_classify_list.*
 import javax.inject.Inject
 
@@ -22,7 +25,8 @@ import javax.inject.Inject
  * 分类列表
  */
 @Route(path = RouterHub.BOOK_MALL_CLASSIFY_LIST)
-class BookMallClassifyListActivity : BookMallBaseActivity() {
+class BookMallClassifyListActivity : BookMallBasePagingActivity(), BookMallClassifyMvpView {
+
 
     @Autowired
     @JvmField
@@ -34,6 +38,9 @@ class BookMallClassifyListActivity : BookMallBaseActivity() {
 
     @Inject
     lateinit var bookMallItemRecommendAdapter: BookMallItemRecommendAdapter
+
+    @Inject
+    lateinit var bookMallPresenter: BookMallClassifyPresenter
 
 
     override fun attachLayoutRes(): Int {
@@ -48,8 +55,13 @@ class BookMallClassifyListActivity : BookMallBaseActivity() {
         setTitleTxt(name)
         showViewBreak(true)
 
+        bookMallPresenter.attachView(this)
+        mSwipeRefreshLayoutUtil = object : SwipeRefreshLayoutUtil(mSwipeRefreshLayout) {
+            override fun onRefresh() {
+                refreshData()
+            }
+        }
         bookMallItemClassifyFilter = BookMallItemClassifyFilter(this)
-
 
         val layoutManager = VirtualLayoutManager(this)
         main_list.layoutManager = layoutManager
@@ -65,12 +77,22 @@ class BookMallClassifyListActivity : BookMallBaseActivity() {
         val adapters = DelegateAdapterUtil.getAdapterList()
         adapters.add(DelegateAdapter.simpleAdapter(bookMallItemClassifyFilter))
 
-        bookMallItemRecommendAdapter.addData(TestData.loadBookData())
         adapters.add(bookMallItemRecommendAdapter)
-
         mDelegateAdapter.setAdapters(adapters)
 
         initEvents(layoutManager)
+
+        mSwipeRefreshLayoutUtil?.startRefresh()
+        loadData()
+    }
+
+    private fun refreshData() {
+        resetPageNum()
+        loadData()
+    }
+
+    private fun loadData() {
+        bookMallPresenter.loadBookByType(name, currentPageNum)
     }
 
     private fun initEvents(layoutManager: VirtualLayoutManager) {
@@ -103,5 +125,32 @@ class BookMallClassifyListActivity : BookMallBaseActivity() {
         if (releasePosts.isShown) {
             releasePosts.visibility = View.INVISIBLE
         }
+    }
+
+    override fun loadBookByTypeSuccess(book: BookData) {
+        bookMallItemRecommendAdapter.loadMoreComplete()
+        val bookData = book.data()
+        if (bookData != null && bookData.isNotEmpty()) {
+            if (currentPageNum == 1) {
+                bookMallItemRecommendAdapter.setNewData(bookData)
+            } else {
+                bookMallItemRecommendAdapter.addData(bookData)
+            }
+            setNextPageNum()
+        }
+        mSwipeRefreshLayoutUtil?.finishRefresh()
+    }
+
+    override fun onLoadMore() {
+        loadData()
+    }
+
+    override fun getAdapter(): BaseQuickAdapter<*, *> {
+        return bookMallItemRecommendAdapter
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        bookMallPresenter.detachView()
     }
 }

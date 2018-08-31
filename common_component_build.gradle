@@ -70,4 +70,9 @@ android {
 dependencies {
     kapt rootProject.ext.dependencies["dagger2-compiler"]
     kapt rootProject.ext.dependencies["arouter-compiler"]
+    compileOnly rootProject.ext.dependencies["auto-value-annotations"]
+    compileOnly rootProject.ext.dependencies["auto-value-gson"]
+    kapt rootProject.ext.dependencies["auto-value"]
+    kapt rootProject.ext.dependencies["auto-value-parcel"]
+    kapt rootProject.ext.dependencies["auto-value-gson"]
 }

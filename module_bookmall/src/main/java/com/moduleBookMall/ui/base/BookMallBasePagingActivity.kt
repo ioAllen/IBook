@@ -3,6 +3,7 @@ package com.moduleBookMall.ui.base
 import android.annotation.SuppressLint
 import android.os.Bundle
 import com.common.base.BaseActivity
+import com.common.base.BasePagingActivity
 import com.common.di.module.ActivityModule
 import com.common.utils.CommonUtils
 import com.moduleBookMall.di.component.BookMallActivityComponent
@@ -18,7 +19,7 @@ import java.util.concurrent.atomic.AtomicLong
  * date:2018/7/30.
  * QQ:619321796
  */
-abstract class BookMallBaseActivity : BaseActivity() {
+abstract class BookMallBasePagingActivity : BasePagingActivity() {
 
     private var mBookMallActivityComponent: BookMallActivityComponent? = null
     private var mActivityId: Long = 0

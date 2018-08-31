@@ -6,6 +6,7 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.RelativeLayout
 import com.common.data.bean.BookNative
+import com.common.utils.IStringUtils
 import com.moduleCommon.R
 import kotlinx.android.synthetic.main.common_include_book_detail_info.view.*
 
@@ -27,7 +28,10 @@ class CommonBookDetailsItemInfo : RelativeLayout {
     }
 
     private fun initData() {
-        detailDescriptionTv.text = Html.fromHtml(bookNative?.bookDescription)
+        val bookDescription = bookNative?.bookDescription
+        if (!IStringUtils.isNullOrEmpty(bookDescription)) {
+            detailDescriptionTv.text = Html.fromHtml(bookDescription)
+        }
     }
 
     fun setData(bookNative: BookNative?) {
