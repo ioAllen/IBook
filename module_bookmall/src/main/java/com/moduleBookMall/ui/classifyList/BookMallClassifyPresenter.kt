@@ -18,15 +18,15 @@ class BookMallClassifyPresenter @Inject constructor(private var api: MallApi) : 
         compositeDisposable.add(api.loadBookByType(params)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
-//                .subscribe(io.reactivex.functions.Consumer<ResponseBody> { t ->
-//                    val json=t.string()
-//                    println(json)
-//                }, this))
-                .subscribe(object : SuccessConsumer<BookData>() {
-                    override fun handleSuccess(k: BookData) {
-                        mvpView?.loadBookByTypeSuccess(k)
-                    }
+                .subscribe(io.reactivex.functions.Consumer<ResponseBody> { t ->
+                    val json = t.string()
+                    println(json)
                 }, this))
+//                .subscribe(object : SuccessConsumer<BookData>() {
+//                    override fun handleSuccess(k: BookData) {
+//                        mvpView?.loadBookByTypeSuccess(k)
+//                    }
+//                }, this))
     }
 
 }
