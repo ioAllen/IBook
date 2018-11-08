@@ -1,7 +1,6 @@
 package com.common.utils
 
 import com.common.BuildConfig
-import com.common.base.BaseApi
 import com.common.utils.cookie.CookiesManager
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.google.gson.GsonBuilder
@@ -13,7 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiUtils {
     fun <T> newApiService(clazz: Class<T>, cookieJar: CookiesManager, baseUrl: String): T {
-        val gson = GsonBuilder().registerTypeAdapterFactory(MyGsonTypeAdapterFactory.create()).create()
+        val gson = GsonBuilder().create()
         val logging = HttpLoggingInterceptor()
         logging.level = if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.NONE
         val client = OkHttpClient.Builder()

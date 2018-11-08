@@ -85,7 +85,7 @@ open class BasePresenter<T : MvpView>() : Presenter<T>, Consumer<Throwable> {
     protected fun getPagingMap(pageNum: Int): HashMap<String, String> {
         val params = HashMap<String, String>()
         params["pageNum"] = pageNum.toString()
-        params["pageSize"] = IPaging.PAGE_SIZE
+        params["pageSize"] = IPaging.PAGE_SIZE.toString()
         return params
     }
 }

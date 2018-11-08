@@ -30,6 +30,12 @@ public abstract class BasePagingActivity extends BaseActivity implements IPaging
         pagingUtil.setPages(pages);
     }
 
+    public void setPagesByData(int dataSize) {
+        if (dataSize >= IPaging.PAGE_SIZE) {
+            setPages(getCurrentPageNum() + 1);
+        }
+    }
+
     /**
      * 获取最新数据需要重置
      */
@@ -60,7 +66,8 @@ public abstract class BasePagingActivity extends BaseActivity implements IPaging
     public void noMoreData() {
         if (getLoadMoreAdapter() != null) {
             getLoadMoreAdapter().setLoadMoreEnabled(false);
-            if (!getLoadMoreAdapter().getShowNoMoreEnabled()) getLoadMoreAdapter().setShowNoMoreEnabled(true);
+            if (!getLoadMoreAdapter().getShowNoMoreEnabled())
+                getLoadMoreAdapter().setShowNoMoreEnabled(true);
             getLoadMoreAdapter().getOriginalAdapter().notifyDataSetChanged();
         }
     }
@@ -71,13 +78,7 @@ public abstract class BasePagingActivity extends BaseActivity implements IPaging
             onLoadMore();
         } else {
             if (getAdapter() != null && getAdapter().isLoading()) {
-//                if (getAdapter().onCreateLayoutHelper() != null
-//                        && getAdapter().onCreateLayoutHelper() instanceof StaggeredGridLayoutHelper) {
-//                    getAdapter().loadMoreEnd(true);
-//                } else {
-//                    getAdapter().loadMoreEnd();
-//                }
-                getAdapter().loadMoreEnd();
+                getAdapter().loadMoreEnd(true);
             }
             noMoreData();
         }

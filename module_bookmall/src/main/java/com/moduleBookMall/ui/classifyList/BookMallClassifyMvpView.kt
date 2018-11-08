@@ -8,4 +8,5 @@ interface BookMallClassifyMvpView : MvpView {
 
     fun loadBookByTypeSuccess(book: BookData)
 
+    fun loadBookByTypeFailure()
 }

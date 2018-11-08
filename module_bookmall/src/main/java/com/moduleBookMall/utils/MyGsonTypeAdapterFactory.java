@@ -1,4 +1,4 @@
-package com.common.utils;
+package com.moduleBookMall.utils;
 
 import com.google.gson.TypeAdapterFactory;
 import com.ryanharter.auto.value.gson.GsonTypeAdapterFactory;

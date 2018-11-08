@@ -80,6 +80,8 @@ class BookMallClassifyListActivity : BookMallBasePagingActivity(), BookMallClass
         adapters.add(bookMallItemRecommendAdapter)
         mDelegateAdapter.setAdapters(adapters)
 
+        bookMallItemRecommendAdapter.setOnLoadMoreListener(this, main_list)
+
         initEvents(layoutManager)
 
         mSwipeRefreshLayoutUtil?.startRefresh()
@@ -136,8 +138,14 @@ class BookMallClassifyListActivity : BookMallBasePagingActivity(), BookMallClass
             } else {
                 bookMallItemRecommendAdapter.addData(bookData)
             }
+            setPagesByData(bookData.size)
             setNextPageNum()
         }
+        mSwipeRefreshLayoutUtil?.finishRefresh()
+    }
+
+    override fun loadBookByTypeFailure() {
+        bookMallItemRecommendAdapter.loadMoreComplete()
         mSwipeRefreshLayoutUtil?.finishRefresh()
     }
 

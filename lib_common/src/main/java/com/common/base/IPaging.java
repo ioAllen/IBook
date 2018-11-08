@@ -10,7 +10,7 @@ import com.common.utils.loadmorewrapper.LoadMoreAdapter;
  */
 
 public interface IPaging extends BaseQuickAdapter.RequestLoadMoreListener, LoadMoreAdapter.OnLoadMoreListener {
-    String PAGE_SIZE = "20";
+    int PAGE_SIZE = 20;
 
     /**
      * 加载更多数据需要设置总页数

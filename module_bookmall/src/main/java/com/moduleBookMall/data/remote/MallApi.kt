@@ -1,9 +1,6 @@
 package com.moduleBookMall.data.remote
 
-import com.common.base.BaseApi
 import com.common.utils.CommonConstant
-import com.moduleBookMall.data.modle.Book
-import com.moduleBookMall.data.modle.BookData
 import io.reactivex.Observable
 import okhttp3.ResponseBody
 import retrofit2.http.POST

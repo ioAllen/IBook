@@ -13,4 +13,7 @@ public abstract class Base {
 
     @Nullable
     public abstract String message();
+
+    @Nullable
+    public abstract Object data();
 }
