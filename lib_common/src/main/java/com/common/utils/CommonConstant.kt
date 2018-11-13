@@ -10,7 +10,7 @@ interface CommonConstant {
     companion object {
         const val biquge = "http://www.biqiuge.com/"
 
-        const val appIp="118.24.53.144";
+        const val appIp="118.24.53.144"
     }
 
 

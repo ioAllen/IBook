@@ -20,9 +20,9 @@ class BookMallClassifyPresenter @Inject constructor(private var api: MallApi, va
                 .subscribeOn(Schedulers.io())
                 .subscribe(io.reactivex.functions.Consumer<ResponseBody> { t ->
                     val book = jsonUtil.fromJson(t.string(), BookData::class.java)
-                    if (book.data()!=null){
+                    if (book.data() != null) {
                         mvpView?.loadBookByTypeSuccess(book)
-                    }else{
+                    } else {
                         mvpView?.loadBookByTypeFailure()
                     }
                 }, this))

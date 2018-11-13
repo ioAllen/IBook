@@ -68,9 +68,9 @@ open class BasePresenter<T : MvpView>() : Presenter<T>, Consumer<Throwable> {
         @Throws(Exception::class)
         override fun accept(k: K) {
             if (k.code() == CommonConstant.ResponseCode.OK_CODE) {
-                handleSuccess(k);
+                handleSuccess(k)
             } else {
-                mvpView?.handleError(k.code(), k.message());
+                mvpView?.handleError(k.code(), k.message())
             }
         }
 
