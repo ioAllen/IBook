@@ -9,7 +9,9 @@ import android.widget.RelativeLayout
 import com.moduleBookMall.R
 import kotlinx.android.synthetic.main.book_mall_classify_filter.view.*
 
-
+/**
+ * 书籍筛选控件
+ */
 class BookMallItemClassifyFilter : RelativeLayout {
 
     constructor(context: Context?) : super(context) {

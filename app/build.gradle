@@ -26,7 +26,7 @@ android {
 
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments = [moduleName: project.getName()]
+                arguments = [moduleName: project.getName(), 'autovaluegson.defaultCollectionsToEmpty': 'true', 'autovaluegson.mutableAdaptersWithDefaultSetters': 'true']
                 includeCompileClasspath true
             }
         }

@@ -7,7 +7,9 @@ import com.common.di.ActivityContext
 import com.common.di.ApplicationContext
 import com.common.utils.ApiUtils
 import com.common.utils.cookie.CookiesManager
+import com.google.gson.GsonBuilder
 import com.moduleBookMall.data.remote.MallApi
+import com.moduleBookMall.utils.MyGsonTypeAdapterFactory
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -17,7 +19,8 @@ class BookMallModule(private val mActivity: Activity) {
 
     @Provides
     internal fun provideAPI(): MallApi {
-        return ApiUtils.newApiService(MallApi::class.java, CookiesManager(mActivity), MallApi.BASE_URL_APP)
+        val gson = GsonBuilder().registerTypeAdapterFactory(MyGsonTypeAdapterFactory.create()).create()
+        return ApiUtils.newApiService(MallApi::class.java, gson, CookiesManager(mActivity), MallApi.BASE_URL_APP)
     }
 
 

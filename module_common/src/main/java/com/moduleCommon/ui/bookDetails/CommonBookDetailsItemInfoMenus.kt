@@ -47,7 +47,7 @@ class CommonBookDetailsItemInfoMenus : RelativeLayout {
         recyclerView.layoutManager = layoutManager
         recyclerView.adapter = commonBookDirectoryAdapter
         recyclerView.scrollBarStyle = RecyclerView.SCROLLBARS_INSIDE_OVERLAY
-        val bookCatalogue = bookNative!!.bookCatalogue
+        val bookCatalogue = bookNative?.bookCatalogue
         if (bookNative != null && bookCatalogue != null) {
             commonBookDirectoryAdapter.addData(bookCatalogue)
             var title = bookNative!!.bookName

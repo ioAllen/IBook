@@ -37,7 +37,7 @@ class BookMallClassifyListActivity : BookMallBasePagingActivity(), BookMallClass
     private lateinit var bookMallItemClassifyFilter: BookMallItemClassifyFilter
 
     @Inject
-    lateinit var bookMallItemRecommendAdapter: BookMallItemRecommendAdapter
+    lateinit var bookMallClassifyListAdapter: BookMallClassifyListAdapter
 
     @Inject
     lateinit var bookMallPresenter: BookMallClassifyPresenter
@@ -77,10 +77,10 @@ class BookMallClassifyListActivity : BookMallBasePagingActivity(), BookMallClass
         val adapters = DelegateAdapterUtil.getAdapterList()
         adapters.add(DelegateAdapter.simpleAdapter(bookMallItemClassifyFilter))
 
-        adapters.add(bookMallItemRecommendAdapter)
+        adapters.add(bookMallClassifyListAdapter)
         mDelegateAdapter.setAdapters(adapters)
 
-        bookMallItemRecommendAdapter.setOnLoadMoreListener(this, main_list)
+        bookMallClassifyListAdapter.setOnLoadMoreListener(this, main_list)
 
         initEvents(layoutManager)
 
@@ -130,13 +130,13 @@ class BookMallClassifyListActivity : BookMallBasePagingActivity(), BookMallClass
     }
 
     override fun loadBookByTypeSuccess(book: BookData) {
-        bookMallItemRecommendAdapter.loadMoreComplete()
+        bookMallClassifyListAdapter.loadMoreComplete()
         val bookData = book.data()
         if (bookData != null && bookData.isNotEmpty()) {
             if (currentPageNum == 1) {
-                bookMallItemRecommendAdapter.setNewData(bookData)
+                bookMallClassifyListAdapter.setNewData(bookData)
             } else {
-                bookMallItemRecommendAdapter.addData(bookData)
+                bookMallClassifyListAdapter.addData(bookData)
             }
             setPagesByData(bookData.size)
             setNextPageNum()
@@ -145,7 +145,7 @@ class BookMallClassifyListActivity : BookMallBasePagingActivity(), BookMallClass
     }
 
     override fun loadBookByTypeFailure() {
-        bookMallItemRecommendAdapter.loadMoreComplete()
+        bookMallClassifyListAdapter.loadMoreComplete()
         mSwipeRefreshLayoutUtil?.finishRefresh()
     }
 
@@ -154,7 +154,7 @@ class BookMallClassifyListActivity : BookMallBasePagingActivity(), BookMallClass
     }
 
     override fun getAdapter(): BaseQuickAdapter<*, *> {
-        return bookMallItemRecommendAdapter
+        return bookMallClassifyListAdapter
     }
 
     override fun onDestroy() {
